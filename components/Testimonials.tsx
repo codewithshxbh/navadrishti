@@ -53,7 +53,7 @@ export default function Testimonials({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const isMobile = useIsMobile();
-  const { containerRef, handleArrowNavigation } = useKeyboardNavigation();
+  const { handleArrowNavigation } = useKeyboardNavigation();
   const { ref: sectionRef, isIntersecting } = useIntersectionObserver({
     threshold: 0.1,
     once: true,
@@ -115,12 +115,7 @@ export default function Testimonials({
     <section
       id="testimonials"
       className={cn('testimonials', className)}
-      ref={(node) => {
-        if (containerRef.current !== undefined) {
-          containerRef.current = node;
-        }
-        sectionRef(node);
-      }}
+      ref={sectionRef}
       onKeyDown={handleKeyDown}
       aria-label="Team testimonials"
       role="region"
