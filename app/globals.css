@@ -4107,6 +4107,19 @@ section:nth-child(6) {
 
   .faq-category-btn {
     white-space: nowrap;
+    background: rgba(30, 30, 46, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+  }
+
+  .faq-category-btn:hover {
+    background: rgba(255, 140, 66, 0.1);
+    border-color: rgba(255, 140, 66, 0.3);
+  }
+
+  .faq-category-btn.active {
+    background: rgba(255, 140, 66, 0.15);
+    border-color: rgba(255, 140, 66, 0.5);
   }
 }
 
