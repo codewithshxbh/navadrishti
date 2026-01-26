@@ -38,9 +38,9 @@ export default function Navigation() {
       const startPosition = window.pageYOffset;
       const distance = targetPosition - startPosition;
 
-      // Shorter duration for mobile to reduce lag
+      // Much shorter duration for mobile to feel instant
       const isMobile = window.innerWidth <= 768;
-      const duration = isMobile ? 800 : 1200;
+      const duration = isMobile ? 400 : 1200;
       let startTime: number | null = null;
 
       const animation = (currentTime: number) => {
@@ -56,10 +56,15 @@ export default function Navigation() {
         }
       };
 
-      // Delay scroll start slightly to allow menu to close
-      requestAnimationFrame(() => {
+      // Start immediately on mobile
+      if (isMobile) {
         requestAnimationFrame(animation);
-      });
+      } else {
+        // Delay scroll start slightly on desktop
+        requestAnimationFrame(() => {
+          requestAnimationFrame(animation);
+        });
+      }
     }
   };
 
