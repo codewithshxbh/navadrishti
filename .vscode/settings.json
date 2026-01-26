@@ -1,0 +1,10 @@
+{
+  "git.ignoreLimitWarning": true,
+  "fiveServer.inject": {
+    "enable": false
+  },
+  "fiveServer.injectBody": false,
+  "fiveServer.pwa": {
+    "enabled": false
+  }
+}
