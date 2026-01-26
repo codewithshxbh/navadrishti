@@ -14,9 +14,9 @@ interface UseIntersectionObserverProps {
  * @param once - If true, keeps element in "intersecting" state after first intersection
  */
 export function useIntersectionObserver({
-  threshold = 0.1,
+  threshold = 0.01,
   root = null,
-  rootMargin = '0px',
+  rootMargin = '100px',
   once = true, // Default to true for better performance
   persistKey,
 }: UseIntersectionObserverProps = {}) {
@@ -44,7 +44,7 @@ export function useIntersectionObserver({
         const entry = entries[0];
         if (entry) {
           setEntry(entry);
-          
+
           if (once) {
             // Animate when intersecting AND haven't intersected before (regardless of scroll direction)
             if (entry.isIntersecting && !hasIntersectedRef.current) {

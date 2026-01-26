@@ -18,7 +18,7 @@ export default function ScrollToTop() {
   // Smooth scroll to top
   const scrollToTop = () => {
     const startPosition = window.pageYOffset;
-    const duration = 1200; // 1.2 seconds
+    const duration = 500; // 0.5 seconds - faster
     let startTime: number | null = null;
 
     const easeInOutCubic = (t: number): number => {
@@ -30,14 +30,14 @@ export default function ScrollToTop() {
       const timeElapsed = currentTime - startTime;
       const progress = Math.min(timeElapsed / duration, 1);
       const ease = easeInOutCubic(progress);
-      
-      window.scrollTo(0, startPosition - (startPosition * ease));
-      
+
+      window.scrollTo(0, startPosition - startPosition * ease);
+
       if (timeElapsed < duration) {
         requestAnimationFrame(animation);
       }
     };
-    
+
     requestAnimationFrame(animation);
   };
 
@@ -57,21 +57,21 @@ export default function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.15 }}
           aria-label="Scroll to top"
         >
-          <svg 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path 
-              d="M7 14L12 9L17 14" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
+            <path
+              d="M7 14L12 9L17 14"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>

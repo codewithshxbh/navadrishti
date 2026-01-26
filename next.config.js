@@ -3,10 +3,19 @@
 const nextConfig = {
   // Performance optimizations
   reactStrictMode: true,
+
+  // Disable React DevTools in production
+  compiler: {
+    reactRemoveProperties:
+      process.env.NODE_ENV === 'production'
+        ? { properties: ['^data-testid$'] }
+        : false,
+  },
+
   experimental: {
     optimizePackageImports: ['framer-motion'],
   },
-  
+
   // Image optimization
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -16,7 +25,7 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  
+
   // Bundle analyzer
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Bundle analyzer
@@ -62,7 +71,7 @@ const nextConfig = {
 
     return config;
   },
-  
+
   // Headers for security and performance
   async headers() {
     return [
@@ -112,12 +121,12 @@ const nextConfig = {
   // Compression
   compress: true,
   poweredByHeader: false,
-  
+
   // TypeScript configuration
   typescript: {
     ignoreBuildErrors: false,
   },
-  
+
   // ESLint configuration
   eslint: {
     dirs: ['app', 'components', 'utils', 'hooks', 'types'],

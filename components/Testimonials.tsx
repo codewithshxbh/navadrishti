@@ -36,7 +36,7 @@ const TESTIMONIALS: readonly Testimonial[] = [
     social: 'LinkedIn',
     socialUrl: 'https://www.linkedin.com/in/vidhan-ai/',
     image: '/photos/vidhan.jpeg',
-    text: "Our offline-first approach with GPS tracking and vernacular support reaches 2 million rural NGOs that other platforms ignore. Every rupee is traced from approval to beneficiary impact with 90% fraud reduction.\n\nBuilding something meaningful requires persistence, and the desire to make impact truly accessible to every corner of India.",
+    text: 'Our offline-first approach with GPS tracking and vernacular support reaches 2 million rural NGOs that other platforms ignore. Every rupee is traced from approval to beneficiary impact with 90% fraud reduction.\n\nBuilding something meaningful requires persistence, and the desire to make impact truly accessible to every corner of India.',
     reverse: false,
   },
 ] as const;
@@ -55,9 +55,9 @@ export default function Testimonials({
   const isMobile = useIsMobile();
   const { handleArrowNavigation } = useKeyboardNavigation();
   const { ref: sectionRef, isIntersecting } = useIntersectionObserver({
-    threshold: 0.1,
+    threshold: 0.01,
     once: true,
-    persistKey: 'testimonials_section'
+    persistKey: 'testimonials_section',
   });
 
   const currentTestimonial = TESTIMONIALS[currentIndex];
@@ -121,21 +121,26 @@ export default function Testimonials({
       role="region"
     >
       <div className="section-header">
-        <motion.h2 
+        <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
-          animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
+          animate={
+            isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+          }
+          transition={{ duration: 0.3 }}
         >
           Our Views
         </motion.h2>
-        <motion.p 
+        <motion.p
           className="section-description"
           initial={{ opacity: 0, y: 20 }}
-          animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          animate={
+            isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+          }
+          transition={{ duration: 0.3, delay: 0.05 }}
         >
-          Perspectives from the team building India's social impact infrastructure
+          Perspectives from the team building India's social impact
+          infrastructure
         </motion.p>
       </div>
 
@@ -143,7 +148,7 @@ export default function Testimonials({
         className="testimonial-carousel"
         initial={{ opacity: 0, y: 30 }}
         animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         aria-live="polite"
@@ -173,19 +178,19 @@ export default function Testimonials({
               key={`testimonial-${testimonial.id}`}
               className="testimonial-item"
               initial={false}
-              animate={{ 
+              animate={{
                 opacity: index === currentIndex ? 1 : 0,
-                zIndex: index === currentIndex ? 2 : 1
+                zIndex: index === currentIndex ? 2 : 1,
               }}
-              transition={{ 
-                duration: 0.6,
-                ease: [0.25, 0.1, 0.25, 1]
+              transition={{
+                duration: 0.3,
+                ease: [0.25, 0.1, 0.25, 1],
               }}
               style={{
                 position: index === 0 ? 'relative' : 'absolute',
                 top: index === 0 ? 'auto' : 0,
                 left: index === 0 ? 'auto' : 0,
-                width: '100%'
+                width: '100%',
               }}
               role="tabpanel"
               aria-labelledby={`testimonial-${testimonial.id}`}
@@ -253,7 +258,11 @@ export default function Testimonials({
         </button>
       </motion.div>
 
-      <div className="carousel-dots" role="tablist" aria-label="Select testimonial">
+      <div
+        className="carousel-dots"
+        role="tablist"
+        aria-label="Select testimonial"
+      >
         {TESTIMONIALS.map((testimonial, index) => (
           <motion.button
             key={testimonial.id}
@@ -261,16 +270,20 @@ export default function Testimonials({
               active: index === currentIndex,
             })}
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={isIntersecting ? { 
-              opacity: 1, 
-              scale: 1 
-            } : { 
-              opacity: 0, 
-              scale: 0.8 
-            }}
-            transition={{ 
-              duration: 0.3, 
-              delay: isIntersecting ? 0.4 + index * 0.1 : 0 
+            animate={
+              isIntersecting
+                ? {
+                    opacity: 1,
+                    scale: 1,
+                  }
+                : {
+                    opacity: 0,
+                    scale: 0.8,
+                  }
+            }
+            transition={{
+              duration: 0.3,
+              delay: isIntersecting ? 0.4 + index * 0.1 : 0,
             }}
             onClick={() => goToTestimonial(index)}
             aria-label={`View ${testimonial.name}'s testimonial`}
@@ -283,7 +296,8 @@ export default function Testimonials({
 
       {/* Screen reader only status */}
       <div className="sr-only" aria-live="polite" aria-atomic="true">
-        Testimonial {currentIndex + 1} of {TESTIMONIALS.length}: {currentTestimonial?.name ?? 'Loading...'}
+        Testimonial {currentIndex + 1} of {TESTIMONIALS.length}:{' '}
+        {currentTestimonial?.name ?? 'Loading...'}
       </div>
     </section>
   );

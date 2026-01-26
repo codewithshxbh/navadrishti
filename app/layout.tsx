@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,8 +32,14 @@ export const metadata: Metadata = {
   ],
   authors: [
     { name: 'Aditya Garg', url: 'https://www.linkedin.com/in/adityagarg2004/' },
-    { name: 'Shubhendu Chakrabarti', url: 'https://www.linkedin.com/in/shubhenduchakrabarti/' },
-    { name: 'Vidhan Singh Rathore', url: 'https://www.linkedin.com/in/vidhan-ai/' },
+    {
+      name: 'Shubhendu Chakrabarti',
+      url: 'https://www.linkedin.com/in/shubhenduchakrabarti/',
+    },
+    {
+      name: 'Vidhan Singh Rathore',
+      url: 'https://www.linkedin.com/in/vidhan-ai/',
+    },
   ],
   creator: 'Navadrishti Team',
   publisher: 'Navadrishti',
@@ -47,7 +54,7 @@ export const metadata: Metadata = {
     url: 'https://navadrishti.com',
     title: 'Navadrishti | Social Impact Operations Platform',
     description:
-      'AI-powered platform solving critical gaps in India\'s ₹50,000+ Crore CSR ecosystem with transparent tracking and measurable impact.',
+      "AI-powered platform solving critical gaps in India's ₹50,000+ Crore CSR ecosystem with transparent tracking and measurable impact.",
     siteName: 'Navadrishti',
     images: [
       {
@@ -62,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Navadrishti | Social Impact Operations Platform',
     description:
-      'AI-powered platform solving critical gaps in India\'s ₹50,000+ Crore CSR ecosystem.',
+      "AI-powered platform solving critical gaps in India's ₹50,000+ Crore CSR ecosystem.",
     images: ['/og-image.jpg'],
     creator: '@navadrishti',
   },
@@ -109,14 +116,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="icon" href="/small-logo.svg" type="image/svg+xml" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#ff8c42" />
-        
+
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+
         {/* DNS Prefetch for performance */}
         <link rel="dns-prefetch" href="//linkedin.com" />
-        
+
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -157,6 +168,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body className={inter.className}>
+        {process.env.NODE_ENV === 'production' && (
+          <Script id="disable-devtools" strategy="afterInteractive">
+            {`
+              if (typeof window !== 'undefined' && window.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
+                window.__REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {};
+                window.__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE = function () {};
+                window.__REACT_DEVTOOLS_GLOBAL_HOOK__.onCommitFiberRoot = function () {};
+                window.__REACT_DEVTOOLS_GLOBAL_HOOK__.onCommitFiberUnmount = function () {};
+              }
+            `}
+          </Script>
+        )}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-orange-500 focus:text-white focus:rounded-md focus:text-sm font-medium"

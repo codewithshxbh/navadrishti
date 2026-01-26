@@ -1,42 +1,55 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 export default function PageLoader() {
-  const [isVisible, setIsVisible] = useState(true)
-  const [fadeOut, setFadeOut] = useState(false)
+  const [isVisible, setIsVisible] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    console.log('PageLoader component mounted and visible')
-    
-    // Start fade out after 2 seconds
+    // Check if mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+
+    // If mobile, don't show loader at all
+    if (window.innerWidth <= 768) {
+      setIsVisible(false);
+      return;
+    }
+
+    console.log('PageLoader component mounted and visible');
+
+    // Start fade out after 1 second (faster)
     const fadeTimer = setTimeout(() => {
-      console.log('Starting fade animation')
-      setFadeOut(true)
-    }, 2000)
-    
+      console.log('Starting fade animation');
+      setFadeOut(true);
+    }, 1000);
+
     // Remove component after fade completes
     const removeTimer = setTimeout(() => {
-      console.log('Removing loader component')
-      setIsVisible(false)
-    }, 3500)
-    
+      console.log('Removing loader component');
+      setIsVisible(false);
+    }, 2000);
+
     return () => {
-      clearTimeout(fadeTimer)
-      clearTimeout(removeTimer)
-    }
-  }, [])
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, []);
 
   // Don't render if not visible
   if (!isVisible) {
-    console.log('Loader component removed from DOM')
-    return null
+    console.log('Loader component removed from DOM');
+    return null;
   }
 
-  const letters = ['N', 'a', 'v', 'a', 'd', 'r', 'i', 's', 'h', 't', 'i']
+  const letters = ['N', 'a', 'v', 'a', 'd', 'r', 'i', 's', 'h', 't', 'i'];
 
   return (
-    <div 
+    <div
       className={`page-loader ${fadeOut ? 'fade-out' : ''}`}
       style={{
         position: 'fixed',
@@ -53,32 +66,32 @@ export default function PageLoader() {
     >
       <div className="loader-content-horizontal">
         <div className="loader-logo">
-          <img 
-            src="/small-logo.svg" 
-            alt="Navadrishti" 
+          <img
+            src="/small-logo.svg"
+            alt="Navadrishti"
             className="loader-logo-img"
             onError={(e) => {
-              console.error('Logo failed to load:', e)
-              e.currentTarget.style.display = 'none'
+              console.error('Logo failed to load:', e);
+              e.currentTarget.style.display = 'none';
             }}
             onLoad={() => console.log('Logo loaded successfully')}
           />
         </div>
-        <div 
+        <div
           className="loader-text"
           style={{
             fontSize: '3rem',
             fontWeight: 'bold',
             color: '#ffffff',
             display: 'flex',
-            opacity: 1
+            opacity: 1,
           }}
         >
           {letters.map((letter, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className="loader-letter"
-              style={{ 
+              style={{
                 animationDelay: `${0.2 + index * 0.08}s`,
                 display: 'inline-block',
                 color: '#ffffff',
@@ -92,5 +105,5 @@ export default function PageLoader() {
         </div>
       </div>
     </div>
-  )
+  );
 }
