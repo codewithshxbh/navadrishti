@@ -1950,7 +1950,7 @@ h6 {
   .hero-content {
     max-width: 100%;
     padding: 0 0.5rem;
-    margin-top: var(--spacing-2xl);
+    margin-top: var(--spacing-3xl);
     animation: none !important;
   }
 
