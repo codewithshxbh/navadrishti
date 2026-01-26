@@ -26,6 +26,10 @@ export default function Navigation() {
     id: string
   ) => {
     e.preventDefault();
+
+    // Close menu immediately for better perceived performance
+    setMobileMenuOpen(false);
+
     const element = document.querySelector(id);
     if (element) {
       const navHeight = 80;
@@ -33,7 +37,10 @@ export default function Navigation() {
         element.getBoundingClientRect().top + window.pageYOffset - navHeight;
       const startPosition = window.pageYOffset;
       const distance = targetPosition - startPosition;
-      const duration = 1800; // 1.8 seconds for smooth visible scrolling
+
+      // Shorter duration for mobile to reduce lag
+      const isMobile = window.innerWidth <= 768;
+      const duration = isMobile ? 800 : 1200;
       let startTime: number | null = null;
 
       const animation = (currentTime: number) => {
@@ -49,9 +56,11 @@ export default function Navigation() {
         }
       };
 
-      requestAnimationFrame(animation);
+      // Delay scroll start slightly to allow menu to close
+      requestAnimationFrame(() => {
+        requestAnimationFrame(animation);
+      });
     }
-    setMobileMenuOpen(false);
   };
 
   return (
@@ -67,6 +76,7 @@ export default function Navigation() {
               src="/photos/logo.svg"
               alt="Navadrishti"
               className="logo-img"
+              loading="eager"
             />
           </a>
           <ul className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>

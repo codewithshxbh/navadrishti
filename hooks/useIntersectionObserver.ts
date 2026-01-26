@@ -21,52 +21,16 @@ export function useIntersectionObserver({
   persistKey,
 }: UseIntersectionObserverProps = {}) {
   const [entry, setEntry] = useState<IntersectionObserverEntry | null>(null);
-  const [isIntersecting, setIsIntersecting] = useState(false); // Start as false for lazy loading
+  const [isIntersecting, setIsIntersecting] = useState(true); // Start as true for eager loading
   const [node, setNode] = useState<Element | null>(null);
   const hasIntersectedRef = useRef(false);
   const lastScrollY = useRef(0);
   const isScrollingDown = useRef(true);
 
   useEffect(() => {
-    if (!node) return;
-
-    // Track scroll direction
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      isScrollingDown.current = currentScrollY > lastScrollY.current;
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry) {
-          setEntry(entry);
-
-          if (once) {
-            // Animate when intersecting AND haven't intersected before (regardless of scroll direction)
-            if (entry.isIntersecting && !hasIntersectedRef.current) {
-              hasIntersectedRef.current = true;
-            }
-            // Keep visible once intersected (within same session)
-            setIsIntersecting(hasIntersectedRef.current);
-          } else {
-            // Normal mode - follows actual intersection state
-            setIsIntersecting(entry.isIntersecting);
-          }
-        }
-      },
-      { threshold, root, rootMargin }
-    );
-
-    observer.observe(node);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
-    };
+    // Disabled for eager loading - everything appears immediately
+    // No intersection observer needed
+    return () => {};
   }, [node, threshold, root, rootMargin, once, persistKey]);
 
   return { ref: setNode, entry, isIntersecting };

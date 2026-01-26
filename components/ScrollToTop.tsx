@@ -59,6 +59,7 @@ export default function ScrollToTop() {
           whileTap={{ scale: 0.9 }}
           transition={{ duration: 0.15 }}
           aria-label="Scroll to top"
+          style={{ touchAction: 'manipulation' }}
         >
           <svg
             width="24"

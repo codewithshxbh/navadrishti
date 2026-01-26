@@ -70,6 +70,7 @@ export default function PageLoader() {
             src="/small-logo.svg"
             alt="Navadrishti"
             className="loader-logo-img"
+            loading="eager"
             onError={(e) => {
               console.error('Logo failed to load:', e);
               e.currentTarget.style.display = 'none';

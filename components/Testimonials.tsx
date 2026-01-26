@@ -232,7 +232,7 @@ export default function Testimonials({
                 <img
                   src={testimonial.image}
                   alt={`Portrait of ${testimonial.name}`}
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                 />
               </div>

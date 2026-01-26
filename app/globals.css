@@ -39,15 +39,31 @@
 
 @media (max-width: 768px) {
   .scroll-to-top {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 3.5rem;
-    height: 3.5rem;
+    bottom: 1rem;
+    right: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    /* Remove padding that might cause square appearance */
+    padding: 0;
+    /* Ensure perfect circle */
+    border-radius: 50% !important;
+    /* Ensure button is above other mobile UI elements */
+    z-index: 1001;
+    /* Add slight background for better visibility */
+    background: rgba(15, 15, 22, 0.5);
+    /* Remove backdrop-filter on mobile as it can cause rendering issues */
+    backdrop-filter: none;
+    /* Remove any outline */
+    outline: none;
+    /* Ensure content doesn't overflow */
+    overflow: hidden;
+    /* Prevent tap highlight */
+    -webkit-tap-highlight-color: transparent;
   }
 
   .scroll-to-top svg {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -425,7 +441,7 @@ h6 {
   gap: 8px;
   padding: 8px;
   z-index: 0;
-  opacity: 0.08;
+  opacity: 0.04;
   background: #0a0a0a;
 }
 
@@ -726,7 +742,7 @@ h6 {
 
 .tab-button {
   padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1.5rem, 4vw, 2rem);
-  background: rgba(36, 36, 36, 0.6);
+  background: rgba(36, 36, 36, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   color: var(--text-secondary);
@@ -1806,7 +1822,7 @@ h6 {
   }
 
   .hero {
-    padding-top: calc(var(--spacing-2xl) + 80px);
+    padding-top: calc(var(--spacing-3xl) + 100px);
     min-height: 100vh;
     background: linear-gradient(
       135deg,
@@ -1816,19 +1832,25 @@ h6 {
   }
 
   .hero-photo-grid {
-    opacity: 0.08;
+    opacity: 0.04;
   }
 
   .hero-title {
-    font-size: var(--font-size-4xl);
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-md);
   }
 
   .hero-subtitle {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
+    line-height: 1.65;
+    margin-bottom: var(--spacing-lg);
   }
 
   .hero-cta {
     flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
   }
 
   .hero-cta .btn-primary,
@@ -1907,10 +1929,18 @@ h6 {
   }
 
   .hero {
-    min-height: 45vh !important;
-    padding: calc(var(--spacing-3xl) + 80px) var(--spacing-sm) var(--spacing-xs);
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
+    min-height: 100vh !important;
+    padding: calc(var(--spacing-3xl) + 100px) var(--spacing-md)
+      var(--spacing-3xl);
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 0.5rem;
+    margin-top: var(--spacing-2xl);
+    animation: none !important;
   }
 
   .about {
@@ -3985,7 +4015,7 @@ section:nth-child(6) {
 }
 
 .faq-item {
-  background: rgba(30, 30, 46, 0.5);
+  background: rgba(36, 36, 36, 0.8);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
   border-radius: 16px;
