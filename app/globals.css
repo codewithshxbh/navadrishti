@@ -4000,7 +4000,7 @@ section:nth-child(6) {
 }
 
 .faq-category-btn {
-  background: rgba(30, 30, 46, 0.5);
+  background: rgba(36, 36, 36, 0.8);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
   border-radius: 50px;
@@ -4107,7 +4107,7 @@ section:nth-child(6) {
 
   .faq-category-btn {
     white-space: nowrap;
-    background: rgba(30, 30, 46, 0.5);
+    background: rgba(36, 36, 36, 0.8);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
   }
