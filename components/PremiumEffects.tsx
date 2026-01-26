@@ -92,10 +92,6 @@ export default function PremiumEffects() {
       bgObserver.observe(el)
     })
 
-    console.log('Navadrishti Portfolio - Premium Features Loaded (Optimized)')
-    console.log('Tip: Press Ctrl+K to jump to contact section')
-    console.log('Performance: Features loaded with deferred initialization')
-
     return () => {
       document.removeEventListener('keydown', handleKeydown)
       window.removeEventListener('resize', setVH)

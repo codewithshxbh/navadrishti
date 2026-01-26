@@ -1,0 +1,16 @@
+{
+  "name": "Navadrishti - Social Impact Operations Platform",
+  "short_name": "Navadrishti",
+  "description": "AI-powered social impact operations platform for NGOs, CSR teams, and individuals",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#ff8c42",
+  "icons": [
+    {
+      "src": "/small-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

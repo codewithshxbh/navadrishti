@@ -107,7 +107,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" className={inter.variable}>
       <head>
         <link rel="icon" href="/small-logo.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#ff8c42" />
         
