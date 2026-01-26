@@ -1,9 +1,35 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // Body scroll lock when menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add('menu-open')
+    } else {
+      document.body.classList.remove('menu-open')
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('menu-open')
+    }
+  }, [mobileMenuOpen])
+
+  // Close menu on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [mobileMenuOpen])
 
   const easeInOutCubic = (t: number): number => {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
@@ -49,7 +75,10 @@ export default function Navigation() {
             <li><a href="#about" onClick={(e) => scrollToSection(e, '#about')}>About</a></li>
             <li><a href="#platform" onClick={(e) => scrollToSection(e, '#platform')}>Platform</a></li>
             <li><a href="#features" onClick={(e) => scrollToSection(e, '#features')}>Features</a></li>
-            <li><a href="#impact" onClick={(e) => scrollToSection(e, '#impact')}>Impact</a></li>
+            <li><a href="#testimonials" onClick={(e) => scrollToSection(e, '#testimonials')}>Our Views</a></li>
+            <li><a href="#video-testimonials" onClick={(e) => scrollToSection(e, '#video-testimonials')}>Inspiration</a></li>
+            <li><a href="#impact" onClick={(e) => scrollToSection(e, '#impact')}>Stats</a></li>
+            <li><a href="#faq" onClick={(e) => scrollToSection(e, '#faq')}>FAQ</a></li>
           </ul>
           <button 
             className={`mobile-toggle ${mobileMenuOpen ? 'active' : ''}`}

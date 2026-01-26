@@ -1,135 +1,188 @@
 'use client'
 
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 const faqData = [
   {
-    category: 'Platform & Access',
+    category: 'Platform Overview',
     questions: [
       {
-        q: 'Who can use Navadrishti?',
-        a: 'Navadrishti is designed for three stakeholders: NGOs managing operations and campaigns, Companies fulfilling CSR obligations, and Individuals contributing to social impact.'
+        q: 'What is Navadrishti?',
+        a: 'Navadrishti is a comprehensive digital platform designed to streamline social impact operations for NGOs, companies executing CSR initiatives, and individuals looking to contribute to social causes.'
       },
       {
-        q: 'Is there a free trial available?',
-        a: 'Yes, we offer a 30-day free trial for NGOs to explore all platform features including project management, AI assistance, and marketplace capabilities.'
+        q: 'Who can benefit from this platform?',
+        a: 'Three main stakeholders: NGOs seeking efficient project management and donor engagement, Companies managing CSR compliance and partnerships, and Individuals wanting to discover verified causes and track their contributions.'
       },
       {
-        q: 'How do I get started?',
-        a: 'Sign up with your organization details, complete the AI-powered e-KYC verification, and you can start creating projects, campaigns, and connecting with verified partners immediately.'
+        q: 'What problem does Navadrishti solve?',
+        a: 'It replaces scattered Excel sheets, manual processes, and multiple tools with one unified system for managing social impact work - from project planning to impact measurement and compliance reporting.'
       }
     ]
   },
   {
-    category: 'Features & Technology',
+    category: 'Features & Capabilities',
     questions: [
       {
-        q: 'What makes Navadrishti different from donation platforms?',
-        a: "We're not a donation platform. Navadrishti is a complete ERP+CRM+Marketplace system that handles operations, compliance, partnerships, and impact measurement - replacing 5-10 different tools NGOs currently use."
+        q: 'What core features does the platform include?',
+        a: 'Project management tools, volunteer coordination, campaign creation, partner verification system, impact tracking and analytics, compliance reporting, and a marketplace for connecting stakeholders.'
       },
       {
-        q: 'Does it work offline?',
-        a: 'Yes, our mobile app has offline-first capabilities with GPS tracking, allowing rural NGOs to track activities without internet and sync data when connectivity is available.'
+        q: 'How does the verification system work?',
+        a: 'Organizations undergo a digital verification process that validates credentials, registrations, and track records to create a trusted network of verified NGOs and CSR partners.'
       },
       {
-        q: 'What languages are supported?',
-        a: 'The platform supports 12+ Indian languages including Hindi, Bengali, Tamil, Telugu, Marathi, and more, making it accessible to NGOs across urban and rural India.'
+        q: 'Is there mobile accessibility?',
+        a: 'Yes, the platform includes mobile-responsive design and features for field work, allowing teams to update projects, track activities, and manage operations from anywhere.'
       }
     ]
   },
   {
-    category: 'Verification & Compliance',
+    category: 'Technical Details',
     questions: [
       {
-        q: 'How does NGO verification work?',
-        a: 'We use AI-powered e-KYC that verifies NGO credentials, MCA registrations, and track records. Verified organizations receive badges and appear in the trusted network, ensuring 5x faster partner onboarding.'
+        q: 'What technologies power the platform?',
+        a: 'Built with modern web technologies including Next.js, React, TypeScript, and includes AI-powered features for documentation assistance and automated reporting.'
       },
       {
-        q: 'How is CSR compliance managed?',
-        a: 'Automated MCA filings, Section 135 compliance tracking, unspent fund management, and complete audit trails ensure companies meet all regulatory requirements without manual paperwork.'
+        q: 'Is data security ensured?',
+        a: 'The platform follows industry-standard security practices with encrypted data transmission, secure authentication, and regular security audits to protect sensitive information.'
       },
       {
-        q: 'Can I track fund utilization?',
-        a: 'Yes, every rupee is traced with GPS surveillance and blockchain audit logs from approval to beneficiary impact, providing 90% fraud reduction and complete transparency.'
+        q: 'Can it integrate with existing tools?',
+        a: 'Designed with integration capabilities to work with common business tools, accounting software, and reporting systems that organizations may already be using.'
       }
     ]
   },
   {
-    category: 'Pricing & Support',
+    category: 'Getting Started',
     questions: [
       {
-        q: 'What are the pricing plans?',
-        a: 'We offer tiered subscriptions for NGOs based on size and features needed, CSR-as-a-Service packages for companies, and commission-based marketplace transactions. Contact us for custom enterprise pricing.'
+        q: 'How can I explore the platform?',
+        a: 'This portfolio showcases the platform\'s design and key features. For a full demonstration or to discuss implementation for your organization, you can reach out through the contact information provided.'
       },
       {
-        q: 'Is technical support available?',
-        a: 'Yes, we provide dedicated support via chat, email, and phone. Premium plans include onboarding assistance, training sessions, and priority technical support.'
+        q: 'What information is needed to get started?',
+        a: 'Basic organization details, type of social impact work, current challenges with existing processes, and specific requirements for project management and compliance needs.'
       },
       {
-        q: 'Can I cancel my subscription anytime?',
-        a: 'Yes, subscriptions are flexible with monthly or annual options. You can upgrade, downgrade, or cancel anytime with no long-term commitments required.'
+        q: 'Is training provided?',
+        a: 'Yes, comprehensive onboarding and training would be provided to ensure teams can effectively utilize all platform features and maximize their social impact operations.'
       }
     ]
   }
 ]
 
 export default function FAQ() {
-  const [activeCategory, setActiveCategory] = useState('Platform & Access')
+  const [activeCategory, setActiveCategory] = useState('Platform Overview')
   const [openQuestion, setOpenQuestion] = useState<number | null>(null)
+  const { ref: sectionRef, isIntersecting: sectionVisible } = useIntersectionObserver({
+    threshold: 0.1,
+  });
 
   const activeFAQ = faqData.find(cat => cat.category === activeCategory)
 
   return (
-    <section id="faq" className="faq-section">
+    <motion.section 
+      id="faq" 
+      className="faq-section"
+      ref={sectionRef}
+      initial={{ opacity: 0 }}
+      animate={sectionVisible ? { opacity: 1 } : { opacity: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          animate={sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-title">Frequently Asked Questions</h2>
           <p className="section-description">
             Everything you need to know about Navadrishti
           </p>
-        </div>
+        </motion.div>
 
-        <div className="faq-content">
+        <motion.div 
+          className="faq-content"
+          initial={{ opacity: 0, y: 30 }}
+          animate={sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <div className="faq-categories">
-            {faqData.map((category) => (
-              <button
+            {faqData.map((category, index) => (
+              <motion.button
                 key={category.category}
                 className={`faq-category-btn ${activeCategory === category.category ? 'active' : ''}`}
                 onClick={() => setActiveCategory(category.category)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {category.category}
-              </button>
+              </motion.button>
             ))}
           </div>
 
-          <div className="faq-questions">
-            {activeFAQ?.questions.map((item, index) => (
-              <div key={index} className="faq-item">
-                <button
-                  className={`faq-question ${openQuestion === index ? 'active' : ''}`}
-                  onClick={() => setOpenQuestion(openQuestion === index ? null : index)}
+          <motion.div 
+            className="faq-questions"
+            initial={{ opacity: 0, y: 20 }}
+            animate={sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <AnimatePresence>
+              {activeFAQ?.questions.map((item, index) => (
+                <motion.div 
+                  key={`${activeCategory}-${index}`}
+                  className="faq-item"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <span>{item.q}</span>
-                  <svg
-                    className={`faq-icon ${openQuestion === index ? 'rotate' : ''}`}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
+                  <motion.button
+                    className={`faq-question ${openQuestion === index ? 'active' : ''}`}
+                    onClick={() => setOpenQuestion(openQuestion === index ? null : index)}
+                    whileHover={{ backgroundColor: 'rgba(55, 48, 163, 0.1)' }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <path d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {openQuestion === index && (
-                  <div className="faq-answer">
-                    {item.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
+                    <span>{item.q}</span>
+                    <motion.svg
+                      className={`faq-icon ${openQuestion === index ? 'rotate' : ''}`}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      animate={{ rotate: openQuestion === index ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <path d="M19 9l-7 7-7-7" />
+                    </motion.svg>
+                  </motion.button>
+                  <AnimatePresence>
+                    {openQuestion === index && (
+                      <motion.div 
+                        className="faq-answer"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {item.a}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

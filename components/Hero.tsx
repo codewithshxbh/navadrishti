@@ -1,7 +1,22 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function Hero() {
   return (
-    <section id="hero" className="hero">
-      <div className="hero-photo-grid">
+    <motion.section 
+      id="hero" 
+      className="hero"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <motion.div 
+        className="hero-photo-grid"
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 0.3, scale: 1 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
+      >
         <div className="photo-grid-item" style={{gridArea: '1 / 1 / 2 / 2'}}>
           <img src="/photos/pic 1.jpeg" alt="Impact" />
         </div>
@@ -47,22 +62,56 @@ export default function Hero() {
         <div className="photo-grid-item" style={{gridArea: '4 / 5 / 5 / 6'}}>
           <img src="/photos/pic 15.jpeg" alt="Impact" />
         </div>
-      </div>
+      </motion.div>
       <div className="container">
-        <div className="hero-content">
-          <h1 className="hero-title">
+        <motion.div 
+          className="hero-content"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <motion.h1 
+            className="hero-title"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
             <span className="text-gradient">The Operating System</span><br />
             for Social Impact
-          </h1>
-          <p className="hero-subtitle">
+          </motion.h1>
+          <motion.p 
+            className="hero-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+          >
             Replace scattered Excel sheets and manual processes with one unified platform for NGOs, companies, and individuals to execute and measure social impact at scale.
-          </p>
-          <div className="hero-cta">
-            <a href="#platform" className="btn-primary">Explore Platform</a>
-            <a href="#about" className="btn-secondary">Learn More</a>
-          </div>
-        </div>
+          </motion.p>
+          <motion.div 
+            className="hero-cta"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+          >
+            <motion.a 
+              href="#platform" 
+              className="btn-primary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore Platform
+            </motion.a>
+            <motion.a 
+              href="#about" 
+              className="btn-secondary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Learn More
+            </motion.a>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

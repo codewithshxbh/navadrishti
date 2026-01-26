@@ -1,10 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 export default function Platform() {
   const [activeTab, setActiveTab] = useState('ngos')
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const { ref: sectionRef, isIntersecting: sectionVisible } = useIntersectionObserver({
+    threshold: 0.1,
+  });
 
   const images = [
     '/photos/pic 1.jpeg',
@@ -53,46 +58,103 @@ export default function Platform() {
   }
 
   return (
-    <section id="platform" className="platform">
+    <motion.section 
+      id="platform" 
+      className="platform"
+      ref={sectionRef}
+      initial={{ opacity: 0 }}
+      animate={sectionVisible ? { opacity: 1 } : { opacity: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          animate={sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-title">Three Stakeholders, One Platform</h2>
-        </div>
-        <div className="platform-tabs">
-          <button 
+        </motion.div>
+        <motion.div 
+          className="platform-tabs"
+          initial={{ opacity: 0, y: 30 }}
+          animate={sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.button 
             className={`tab-button ${activeTab === 'ngos' ? 'active' : ''}`}
             onClick={() => setActiveTab('ngos')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             NGOs
-          </button>
-          <button 
+          </motion.button>
+          <motion.button 
             className={`tab-button ${activeTab === 'companies' ? 'active' : ''}`}
             onClick={() => setActiveTab('companies')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Companies
-          </button>
-          <button 
+          </motion.button>
+          <motion.button 
             className={`tab-button ${activeTab === 'individuals' ? 'active' : ''}`}
             onClick={() => setActiveTab('individuals')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Individuals
-          </button>
-        </div>
-        <div className="diagonal-split-container">
+          </motion.button>
+        </motion.div>
+        <motion.div 
+          className="diagonal-split-container"
+          initial={{ opacity: 0, y: 40 }}
+          animate={sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
           <div className="diagonal-content-left">
-            <h3 className="platform-title">{tabs[activeTab as keyof typeof tabs].title}</h3>
-            <ul className="feature-list">
-              {tabs[activeTab as keyof typeof tabs].features.map((feature, index) => (
-                <li key={index}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+            <AnimatePresence>
+              <motion.h3 
+                key={`title-${activeTab}`}
+                className="platform-title"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.3 }}
+              >
+                {tabs[activeTab as keyof typeof tabs].title}
+              </motion.h3>
+            </AnimatePresence>
+            <motion.ul 
+              className="feature-list"
+              initial={{ opacity: 0 }}
+              animate={sectionVisible ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <AnimatePresence>
+                {tabs[activeTab as keyof typeof tabs].features.map((feature, index) => (
+                  <motion.li 
+                    key={`${activeTab}-${index}`}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>{feature}</span>
+                  </motion.li>
+                ))}
+              </AnimatePresence>
+            </motion.ul>
           </div>
-          <div className="diagonal-content-right">
+          <motion.div 
+            className="diagonal-content-right"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={sectionVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <div className="diagonal-image-wrapper">
               <video 
                 autoPlay 
@@ -104,9 +166,9 @@ export default function Platform() {
                 <source src="/videos/ngo.mp4" type="video/mp4" />
               </video>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
