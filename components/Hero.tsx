@@ -25,8 +25,8 @@ export default function Hero() {
     >
       <motion.div
         className="hero-photo-grid"
-        initial={{ opacity: isMobile ? 0.18 : 0, scale: isMobile ? 1 : 1.1 }}
-        animate={{ opacity: 0.18, scale: 1 }}
+        initial={{ opacity: isMobile ? 0.4 : 0, scale: isMobile ? 1 : 1.1 }}
+        animate={{ opacity: 0.4, scale: 1 }}
         transition={{ duration: isMobile ? 0 : 1.2, delay: isMobile ? 0 : 0.2 }}
       >
         <div className="photo-grid-item" style={{ gridArea: '1 / 1 / 2 / 2' }}>

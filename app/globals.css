@@ -1145,8 +1145,9 @@ h6 {
 }
 
 .impact-stat {
-  background: var(--bg-secondary);
-  border: 1px solid #000000;
+  background: rgba(36, 36, 36, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
   border-radius: 1rem;
   padding: var(--spacing-2xl);
   text-align: center;
