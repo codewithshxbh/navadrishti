@@ -54,4 +54,39 @@
   <changefreq>monthly</changefreq>
 </url>
 
+<url>
+  <loc>https://navadrishti.in/marketing/csr-ngo-platform.html</loc>
+  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
+  <priority>0.90</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>https://navadrishti.in/marketing/ai-matching.html</loc>
+  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
+  <priority>0.90</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>https://navadrishti.in/marketing/ca-badge.html</loc>
+  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
+  <priority>0.90</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>https://navadrishti.in/marketing/monitoring.html</loc>
+  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
+  <priority>0.90</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>https://navadrishti.in/marketing/compare.html</loc>
+  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
+  <priority>0.90</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
 </urlset>
