@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 export default function Hero() {
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -15,19 +15,20 @@ export default function Hero() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  return (
+  // Desktop Hero
+  const DesktopHero = () => (
     <motion.section
       id="hero"
-      className="hero"
-      initial={{ opacity: isMobile ? 1 : 0 }}
+      className="hero hero-desktop"
+      initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: isMobile ? 0 : 1 }}
+      transition={{ duration: 1 }}
     >
       <motion.div
         className="hero-photo-grid"
-        initial={{ opacity: isMobile ? 0.4 : 0, scale: isMobile ? 1 : 1.1 }}
+        initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 0.4, scale: 1 }}
-        transition={{ duration: isMobile ? 0 : 1.2, delay: isMobile ? 0 : 0.2 }}
+        transition={{ duration: 1.2, delay: 0.2 }}
       >
         <div className="photo-grid-item" style={{ gridArea: '1 / 1 / 2 / 2' }}>
           <img src="/photos/pic 1.jpeg" alt="Impact" loading="eager" />
@@ -81,21 +82,15 @@ export default function Hero() {
       <div className="container">
         <motion.div
           className="hero-content"
-          initial={{ opacity: isMobile ? 1 : 0, y: isMobile ? 0 : 50 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: isMobile ? 0 : 0.8,
-            delay: isMobile ? 0 : 0.5,
-          }}
+          transition={{ duration: 0.8, delay: 0.5 }}
         >
           <motion.h1
             className="hero-title"
-            initial={{ opacity: isMobile ? 1 : 0, y: isMobile ? 0 : 30 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: isMobile ? 0 : 0.8,
-              delay: isMobile ? 0 : 0.7,
-            }}
+            transition={{ duration: 0.8, delay: 0.7 }}
           >
             <span className="text-gradient">The Operating System</span>
             <br />
@@ -103,12 +98,9 @@ export default function Hero() {
           </motion.h1>
           <motion.p
             className="hero-subtitle"
-            initial={{ opacity: isMobile ? 1 : 0, y: isMobile ? 0 : 20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: isMobile ? 0 : 0.8,
-              delay: isMobile ? 0 : 0.9,
-            }}
+            transition={{ duration: 0.8, delay: 0.9 }}
           >
             Replace scattered Excel sheets and manual processes with one unified
             platform for NGOs, companies, and individuals to execute and measure
@@ -116,12 +108,9 @@ export default function Hero() {
           </motion.p>
           <motion.div
             className="hero-cta"
-            initial={{ opacity: isMobile ? 1 : 0, y: isMobile ? 0 : 20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: isMobile ? 0 : 0.8,
-              delay: isMobile ? 0 : 1.1,
-            }}
+            transition={{ duration: 0.8, delay: 1.1 }}
           >
             <motion.a
               href="https://app.navadrishti.in"
@@ -146,4 +135,113 @@ export default function Hero() {
       </div>
     </motion.section>
   );
+
+  // Mobile Hero - Completely Redesigned
+  const MobileHero = () => (
+    <section id="hero" className="hero hero-mobile">
+      {/* Mobile Background Pattern */}
+      <div className="hero-mobile-bg">
+        <div className="mobile-gradient-orb mobile-orb-1"></div>
+        <div className="mobile-gradient-orb mobile-orb-2"></div>
+        <div className="mobile-pattern-dots"></div>
+      </div>
+
+      {/* Mobile Photo Carousel */}
+      <div className="hero-mobile-carousel">
+        {/* Top Row - Scrolling Right */}
+        <div className="carousel-row carousel-row-right">
+          <div className="carousel-track">
+            {[...Array(3)].map((_, setIdx) =>
+              [1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                <div key={`top-${setIdx}-${num}`} className="carousel-item">
+                  <img
+                    src={`/photos/pic ${num}.jpeg`}
+                    alt={`Impact ${num}`}
+                    loading="eager"
+                  />
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+
+        {/* Bottom Row - Scrolling Left */}
+        <div className="carousel-row carousel-row-left">
+          <div className="carousel-track">
+            {[...Array(3)].map((_, setIdx) =>
+              [9, 10, 11, 12, 13, 14, 15].map((num) => (
+                <div key={`bottom-${setIdx}-${num}`} className="carousel-item">
+                  <img
+                    src={`/photos/pic ${num}.jpeg`}
+                    alt={`Impact ${num}`}
+                    loading="eager"
+                  />
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <motion.div
+          className="hero-mobile-content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {/* Mobile Title */}
+          <motion.h1
+            className="hero-mobile-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <span className="mobile-title-highlight">The Operating System</span>
+            <span className="mobile-title-main">for Social Impact</span>
+          </motion.h1>
+
+          {/* Mobile Subtitle */}
+          <motion.p
+            className="hero-mobile-subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            One unified platform for NGOs, companies, and individuals to execute
+            and measure social impact at scale.
+          </motion.p>
+
+          {/* Mobile CTA */}
+          <motion.div
+            className="hero-mobile-cta"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <motion.a
+              href="https://app.navadrishti.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore Platform
+            </motion.a>
+            <motion.a
+              href="#video-testimonials"
+              className="btn-secondary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Learn More
+            </motion.a>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+
+  return isMobile ? <MobileHero /> : <DesktopHero />;
 }
