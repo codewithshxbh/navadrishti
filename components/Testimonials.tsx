@@ -16,7 +16,7 @@ const TESTIMONIALS: readonly Testimonial[] = [
     social: 'LinkedIn',
     socialUrl: 'https://www.linkedin.com/in/adityagarg2004/',
     image: '/photos/aditya.png',
-    text: "We're not building another donation platform. Navadrishti is the complete operating system that NGOs, companies, and individuals need to create transparent, measurable social impact at scale.\n\nRemember: You don't need a perfect background to build a great future. You just need direction, discipline, and the courage to start.\n\nLet's move forward, one step, one skill, one leap at a time.",
+    text: "We're executing on India's ₹30,000 crore CSR opportunity. With 3.3M NGOs and 72% compliance failures, we built the unified OS the sector needs—targeting 10K mid-sized NGOs and 500 CSR firms in Year 1.\n\nExecution means solving real gaps—Q4 fund rushes, 60% reporting delays—and capturing 20% market share through strategic penetration of Tier-1 and Tier-2 cities.",
     reverse: false,
   },
   {
@@ -26,7 +26,7 @@ const TESTIMONIALS: readonly Testimonial[] = [
     social: 'LinkedIn',
     socialUrl: 'https://www.linkedin.com/in/shubhenduchakrabarti/',
     image: '/photos/shubhendu.jpeg',
-    text: "India has 3.1 million NGOs and ₹50,000+ Crore in CSR spending, yet 80% of funds rush in Q4 and 70% still use Excel. We're solving these systemic gaps with ERP, CRM, and marketplace technology.\n\nBuilding the infrastructure that scales social impact requires technical excellence and deep understanding of India's unique challenges.",
+    text: 'Our tech stack solves competitor loopholes—AI-powered matching for 5x faster verification, blockchain-backed transparency, automated compliance tracking. Full ERP+CRM+marketplace replacing 70% Excel usage.\n\nWe built microservices with 99.9% uptime, real-time analytics, and ML-powered fund allocation. Our platform delivers 90% fraud reduction through smart verification systems.',
     reverse: true,
   },
   {
@@ -36,7 +36,7 @@ const TESTIMONIALS: readonly Testimonial[] = [
     social: 'LinkedIn',
     socialUrl: 'https://www.linkedin.com/in/vidhan-ai/',
     image: '/photos/vidhan.jpeg',
-    text: 'Our offline-first approach with GPS tracking and vernacular support reaches 2 million rural NGOs that other platforms ignore. Every rupee is traced from approval to beneficiary impact with 90% fraud reduction.\n\nBuilding something meaningful requires persistence, and the desire to make impact truly accessible to every corner of India.',
+    text: 'We operationalized statutory verification through empanelled auditors, enabling 7-day turnarounds that crush self-reported competitors. Our offline-first vernacular app reaches 2M rural NGOs that platforms ignore.\n\nOperations means scalable processes—GPS tracking, milestone-based disbursals, and end-to-end transparency. Every system works seamlessly from metros to remote villages.',
     reverse: false,
   },
 ] as const;
