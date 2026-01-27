@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://navadrishti.com'),
+  metadataBase: new URL('https://navadrishti.in'),
   title: {
     template: '%s | Navadrishti',
     default: 'Navadrishti | Social Impact Operations Platform',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://navadrishti.com',
+    url: 'https://navadrishti.in',
     title: 'Navadrishti | Social Impact Operations Platform',
     description:
       "AI-powered platform solving critical gaps in India's ₹50,000+ Crore CSR ecosystem with transparent tracking and measurable impact.",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     // Add other verification codes as needed
   },
   alternates: {
-    canonical: 'https://navadrishti.com',
+    canonical: 'https://navadrishti.in',
   },
 };
 
