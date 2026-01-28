@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: 'https://navadrishti.in',
-    title: 'Navadrishti | Social Impact Operations Platform',
+    title: 'Navadrishti | Operating System for Social Impact in India',
     description:
       "AI-powered platform solving critical gaps in India's ₹50,000+ Crore CSR ecosystem with transparent tracking and measurable impact.",
     siteName: 'Navadrishti',
@@ -61,13 +61,13 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Navadrishti - Social Impact Operations Platform',
+        alt: 'Navadrishti - Operating System for Social Impact in India',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Navadrishti | Social Impact Operations Platform',
+    title: 'Navadrishti | Operating System for Social Impact in India',
     description:
       "AI-powered platform solving critical gaps in India's ₹50,000+ Crore CSR ecosystem.",
     images: ['/og-image.jpg'],
