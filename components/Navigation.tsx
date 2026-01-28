@@ -123,11 +123,6 @@ export default function Navigation() {
               </a>
             </li>
             <li>
-              <a href="#impact" onClick={(e) => scrollToSection(e, '#impact')}>
-                Stats
-              </a>
-            </li>
-            <li>
               <a href="#faq" onClick={(e) => scrollToSection(e, '#faq')}>
                 FAQ
               </a>
