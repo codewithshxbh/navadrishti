@@ -9,7 +9,7 @@ export default function Navigation() {
   // Handle scroll to detect when past hero section
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.querySelector('.hero');
+      const heroSection = document.querySelector('.hero') as HTMLElement;
       if (heroSection) {
         const heroHeight = heroSection.offsetHeight;
         setScrolled(window.scrollY > heroHeight * 0.5);
