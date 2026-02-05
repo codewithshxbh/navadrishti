@@ -361,7 +361,7 @@ h6 {
 }
 
 .mobile-toggle span {
-  background: #ffffff;
+  background: #1a1a1a;
   transition: background 0.3s ease;
 }
 
@@ -608,6 +608,8 @@ h6 {
 @media (max-width: 768px) {
   .logo-mobile {
     display: block;
+    transition: none !important;
+    filter: none !important;
   }
 
   .logo-desktop {
@@ -627,6 +629,14 @@ h6 {
   display: flex;
   gap: var(--spacing-md);
   flex-wrap: wrap;
+}
+
+.hero-cta .btn-primary {
+  background: #ff8c42;
+}
+
+.hero-cta .btn-primary:hover {
+  background: #ff7a2e;
 }
 
 .hero-stats {
@@ -903,7 +913,7 @@ h6 {
   border: 2px solid #000000;
   transition: all 0.3s ease;
   text-align: left;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   position: relative;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -912,7 +922,7 @@ h6 {
 
 .stakeholder-card:hover {
   border-color: #000000;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .stakeholder-icon {
@@ -1918,7 +1928,7 @@ h6 {
   .mobile-toggle span {
     width: 24px;
     height: 2px;
-    background: #ffffff;
+    background: #1a1a1a;
     border-radius: 2px;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     transform-origin: center;
@@ -4615,7 +4625,7 @@ section:nth-child(6) {
   padding: 100px 0 60px;
   position: relative;
   overflow: hidden;
-  background: #2d2d2d;
+  background: #ffffff;
   display: flex;
   align-items: center;
   width: 100%;
@@ -4629,7 +4639,7 @@ section:nth-child(6) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(255, 255, 255, 0.03);
   z-index: 1;
   pointer-events: none;
 }
@@ -4777,7 +4787,7 @@ section:nth-child(6) {
   height: 100%;
   object-fit: cover;
   display: block;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: opacity 0.3s ease;
 }
 
@@ -4829,14 +4839,14 @@ section:nth-child(6) {
 }
 
 .mobile-title-highlight {
-  color: #ffffff;
+  color: #000000;
   font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
 
 .mobile-title-main {
-  color: #ffffff;
+  color: #000000;
   font-size: 1.8rem;
   font-weight: 600;
 }
@@ -4845,7 +4855,7 @@ section:nth-child(6) {
 .hero-mobile-subtitle {
   font-size: 15px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.8);
   margin-bottom: 32px;
   max-width: 500px;
   margin-left: auto;
@@ -4911,6 +4921,26 @@ section:nth-child(6) {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+}
+
+.hero-mobile-cta .btn-primary {
+  background: #ff8c42;
+}
+
+.hero-mobile-cta .btn-primary:hover {
+  background: #ff7a2e;
+}
+
+.hero-mobile-cta .btn-secondary {
+  background: transparent;
+  color: #000000;
+  border-color: #000000;
+}
+
+.hero-mobile-cta .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: #000000;
+  color: #000000;
 }
 
 .btn-mobile-primary {

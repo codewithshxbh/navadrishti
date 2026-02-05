@@ -5,6 +5,17 @@ import { useState, useEffect } from 'react';
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile viewport
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Handle scroll to detect when past hero section
   useEffect(() => {
@@ -130,7 +141,7 @@ export default function Navigation() {
               loading="eager"
             />
             <img
-              src={scrolled ? '/photos/logo1.svg' : '/photos/logo.svg'}
+              src="/photos/logo1.svg"
               alt="Navadrishti"
               className="logo-img logo-mobile"
               loading="eager"
