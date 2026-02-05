@@ -20,17 +20,13 @@ export default function PageLoader() {
       return;
     }
 
-    console.log('PageLoader component mounted and visible');
-
     // Start fade out after 1 second (faster)
     const fadeTimer = setTimeout(() => {
-      console.log('Starting fade animation');
       setFadeOut(true);
     }, 1000);
 
     // Remove component after fade completes
     const removeTimer = setTimeout(() => {
-      console.log('Removing loader component');
       setIsVisible(false);
     }, 2000);
 
@@ -42,7 +38,6 @@ export default function PageLoader() {
 
   // Don't render if not visible
   if (!isVisible) {
-    console.log('Loader component removed from DOM');
     return null;
   }
 
@@ -75,7 +70,6 @@ export default function PageLoader() {
               console.error('Logo failed to load:', e);
               e.currentTarget.style.display = 'none';
             }}
-            onLoad={() => console.log('Logo loaded successfully')}
           />
         </div>
         <div

@@ -48,9 +48,15 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <img
-              src="/photos/logo.svg"
+              src="/photos/logo1.svg"
               alt="Navadrishti"
-              className="footer-logo-img"
+              className="footer-logo-img logo-desktop"
+              loading="eager"
+            />
+            <img
+              src="/photos/logo1.svg"
+              alt="Navadrishti"
+              className="footer-logo-img logo-mobile"
               loading="eager"
             />
           </div>

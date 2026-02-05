@@ -55,8 +55,6 @@ export default function ScrollToTop() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
           transition={{ duration: 0.15 }}
           aria-label="Scroll to top"
           style={{ touchAction: 'manipulation' }}

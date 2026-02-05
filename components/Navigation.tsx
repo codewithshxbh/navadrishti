@@ -4,6 +4,22 @@ import { useState, useEffect } from 'react';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll to detect when past hero section
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector('.hero');
+      if (heroSection) {
+        const heroHeight = heroSection.offsetHeight;
+        setScrolled(window.scrollY > heroHeight * 0.5);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close menu on escape key
   useEffect(() => {
@@ -69,7 +85,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="nav">
+    <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="nav-content">
           <a
@@ -78,9 +94,15 @@ export default function Navigation() {
             onClick={(e) => scrollToSection(e, '#hero')}
           >
             <img
-              src="/photos/logo.svg"
+              src={scrolled ? '/photos/logo1.svg' : '/photos/logo.svg'}
               alt="Navadrishti"
-              className="logo-img"
+              className="logo-img logo-desktop"
+              loading="eager"
+            />
+            <img
+              src={scrolled ? '/photos/logo1.svg' : '/photos/logo.svg'}
+              alt="Navadrishti"
+              className="logo-img logo-mobile"
               loading="eager"
             />
           </a>
@@ -104,14 +126,6 @@ export default function Navigation() {
                 onClick={(e) => scrollToSection(e, '#features')}
               >
                 Features
-              </a>
-            </li>
-            <li>
-              <a
-                href="#testimonials"
-                onClick={(e) => scrollToSection(e, '#testimonials')}
-              >
-                Our Views
               </a>
             </li>
             <li>
