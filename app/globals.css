@@ -699,14 +699,14 @@ h6 {
   transform: none !important;
   will-change: auto;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   -webkit-tap-highlight-color: transparent;
   tap-highlight-color: transparent;
 }
 
 .about-card:hover {
   border-color: #000000;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: none;
 }
 
 .about-card h3 {
@@ -731,12 +731,7 @@ h6 {
 .solution-divider {
   width: 100%;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 140, 66, 0.3),
-    transparent
-  );
+  background: rgba(0, 0, 0, 0.1);
   margin: 0.75rem 0;
 }
 
@@ -749,12 +744,7 @@ h6 {
 .feature-divider {
   width: 100%;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: rgba(0, 0, 0, 0.1);
   margin: 1.25rem 0;
 }
 
@@ -913,7 +903,7 @@ h6 {
   border: 2px solid #000000;
   transition: all 0.3s ease;
   text-align: left;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
   position: relative;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -922,7 +912,7 @@ h6 {
 
 .stakeholder-card:hover {
   border-color: #000000;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
 }
 
 .stakeholder-icon {
@@ -1206,14 +1196,14 @@ h6 {
   transform: none !important;
   will-change: auto;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   -webkit-tap-highlight-color: transparent;
   tap-highlight-color: transparent;
 }
 
 .feature-card:hover {
   border-color: #000000;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: none;
 }
 
 .feature-number {
@@ -3523,9 +3513,7 @@ pre {
 
 .feature-card:hover,
 .about-card:hover {
-  box-shadow:
-    0 20px 60px rgba(255, 140, 66, 0.2),
-    0 0 0 1px rgba(255, 140, 66, 0.1);
+  box-shadow: none;
 }
 
 /* Glassmorphism Navigation */
