@@ -699,14 +699,14 @@ h6 {
   transform: none !important;
   will-change: auto;
   transition: all 0.3s ease;
-  box-shadow: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   -webkit-tap-highlight-color: transparent;
   tap-highlight-color: transparent;
 }
 
 .about-card:hover {
   border-color: #000000;
-  box-shadow: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .about-card h3 {
@@ -903,7 +903,7 @@ h6 {
   border: 2px solid #000000;
   transition: all 0.3s ease;
   text-align: left;
-  box-shadow: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -912,7 +912,7 @@ h6 {
 
 .stakeholder-card:hover {
   border-color: #000000;
-  box-shadow: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .stakeholder-icon {
@@ -1019,7 +1019,7 @@ h6 {
   aspect-ratio: 4/3;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1196,14 +1196,14 @@ h6 {
   transform: none !important;
   will-change: auto;
   transition: all 0.3s ease;
-  box-shadow: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   -webkit-tap-highlight-color: transparent;
   tap-highlight-color: transparent;
 }
 
 .feature-card:hover {
   border-color: #000000;
-  box-shadow: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .feature-number {
@@ -1306,14 +1306,12 @@ h6 {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .impact-stat:hover {
   border-color: var(--accent-primary);
-  box-shadow:
-    0 0 20px rgba(255, 140, 66, 0.4),
-    0 0 40px rgba(255, 107, 53, 0.2),
-    0 0 60px rgba(255, 140, 66, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* ========================================
@@ -1346,15 +1344,13 @@ h6 {
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
   transition: all 0.3s ease;
 }
 
 .testimonial-card:hover {
-  box-shadow:
-    0 0 20px rgba(255, 140, 66, 0.4),
-    0 0 40px rgba(255, 107, 53, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-color: var(--accent-primary);
 }
 
@@ -1533,15 +1529,13 @@ h6 {
   padding: var(--spacing-xl);
   border-radius: 1rem;
   border: 1px solid var(--border-color);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all var(--transition-base);
 }
 
 .contact-form:hover {
   border-color: var(--accent-primary);
-  box-shadow:
-    0 8px 32px rgba(255, 140, 66, 0.25),
-    0 0 60px rgba(255, 107, 53, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .form-group {
@@ -3690,14 +3684,8 @@ html {
 }
 
 /* Advanced Shadow System */
-.feature-card,
-.about-card,
-.platform-content,
-.contact-form {
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 8px 16px rgba(0, 0, 0, 0.1),
-    0 16px 32px rgba(0, 0, 0, 0.1);
+.platform-content {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Glow Effect on Hover */
@@ -3833,7 +3821,7 @@ section:nth-child(6) {
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   pointer-events: auto;
 }
 
@@ -4133,7 +4121,7 @@ section:nth-child(6) {
 
 .faq-item:hover {
   border-color: #000000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .faq-question {
@@ -4767,7 +4755,7 @@ section:nth-child(6) {
   border-radius: 12px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-item img {
