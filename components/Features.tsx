@@ -38,13 +38,12 @@ const FeatureCard = ({
             animate={{ opacity: 1, height: 'auto', marginTop: 12 }}
             exit={{ opacity: 0, height: 0, marginTop: 0 }}
             transition={{
-              height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
-              opacity: { duration: 0.2, delay: isExpanded ? 0.05 : 0 },
-              marginTop: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
+              duration: 0.4,
+              ease: [0.4, 0, 0.2, 1],
             }}
             style={{ overflow: 'hidden' }}
           >
-            <div className="feature-divider"></div>
+            <div className="feature-divider" />
             <p>{description}</p>
           </motion.div>
         )}
@@ -57,7 +56,7 @@ const FeatureCard = ({
         }}
       >
         <span className="expand-text">
-          {isExpanded ? 'Click to collapse' : 'Click to expand'}
+          {isExpanded ? 'Click to contract' : 'Click to expand'}
         </span>
         <svg
           viewBox="0 0 24 24"
@@ -66,7 +65,7 @@ const FeatureCard = ({
           strokeWidth="2"
           style={{
             transform: isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)',
-            transition: 'transform 0.4s ease',
+            transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
           <path d="M19 9l-7 7-7-7" />
@@ -110,7 +109,7 @@ export default function Features() {
           <FeatureCard
             index={0}
             title="Project Management"
-            description="Manage projects, volunteers, services, and campaigns from planning through execution with full workflow automation"
+            description="Complete project lifecycle management with task automation, milestone tracking, volunteer coordination, and campaign execution. Integrated workflows connect planning to impact measurement with real-time dashboards, resource allocation, and team collaboration tools that eliminate manual coordination overhead."
             image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=200&fit=crop&q=80"
             icon={
               <svg
@@ -131,7 +130,7 @@ export default function Features() {
           <FeatureCard
             index={1}
             title="AI-Powered Assistance"
-            description="Get help with campaign creation, proposal writing, documentation, and generate structured impact reports automatically"
+            description="Advanced AI capabilities for campaign creation, automated proposal writing, intelligent documentation management, and structured impact report generation. Natural language processing helps draft compelling narratives, while machine learning suggests optimal strategies based on historical success patterns and stakeholder preferences."
             image="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop&q=80"
             icon={
               <svg
@@ -151,7 +150,7 @@ export default function Features() {
           <FeatureCard
             index={2}
             title="Verified Ecosystem"
-            description="Connect with verified NGOs, CSR partners, and professionals in a trusted network built for collaboration"
+            description="Multi-tier verification system ensuring trust across the network. AI-powered e-KYC validates NGO registrations, financials, and impact history. Companies get verified CSR partners, NGOs connect with authenticated funders, and professionals join a credible marketplace - all backed by blockchain audit trails and transparent reputation scoring."
             image="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=200&fit=crop&q=80"
             icon={
               <svg
@@ -170,7 +169,7 @@ export default function Features() {
           <FeatureCard
             index={3}
             title="Financial Governance"
-            description="Track CSR budgets, monitor fund utilization, and ensure compliance with transparent, auditable financial workflows"
+            description="End-to-end financial tracking from budget allocation to beneficiary impact. Real-time fund utilization monitoring, unspent fund management, and compliance reporting. GPS-enabled expense verification ensures every rupee is traceable with blockchain-backed audit logs preventing fraud and ensuring transparent fund governance."
             image="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=200&fit=crop&q=80"
             icon={
               <svg
@@ -189,7 +188,7 @@ export default function Features() {
           <FeatureCard
             index={4}
             title="Products & Services"
-            description="NGOs can sell products and professional services, creating sustainable revenue streams beyond donations"
+            description="Integrated marketplace enabling NGOs to sell handcrafted products, offer professional consulting services, and create sustainable revenue streams beyond traditional donations. Built-in payment processing, inventory management, and delivery tracking. Companies can procure through CSR budgets while supporting social enterprises and building long-term partnerships."
             image="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&h=200&fit=crop&q=80"
             icon={
               <svg
@@ -209,7 +208,7 @@ export default function Features() {
           <FeatureCard
             index={5}
             title="Audit & Compliance"
-            description="Every action is logged and traceable. Built-in verification, approval workflows, and compliance reporting"
+            description="Comprehensive audit infrastructure with immutable activity logs, multi-level approval workflows, and automated compliance reporting. Every transaction, document change, and stakeholder interaction is permanently recorded. Built-in regulatory templates for CSR committee reports. Real-time compliance dashboards highlight risks and ensure regulatory adherence."
             image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=200&fit=crop&q=80"
             icon={
               <svg

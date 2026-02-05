@@ -150,7 +150,11 @@ export default function FAQ() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.08,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
                 >
                   <button
                     className={`faq-question ${openQuestion === index ? 'active' : ''}`}
@@ -166,19 +170,49 @@ export default function FAQ() {
                       stroke="currentColor"
                       strokeWidth="2"
                       animate={{ rotate: openQuestion === index ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{
+                        duration: 0.4,
+                        ease: [0.4, 0, 0.2, 1],
+                      }}
                     >
                       <path d="M19 9l-7 7-7-7" />
                     </motion.svg>
                   </button>
-                  <AnimatePresence>
+                  <AnimatePresence initial={false}>
                     {openQuestion === index && (
                       <motion.div
                         className="faq-answer"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{
+                          height: 'auto',
+                          opacity: 1,
+                          transition: {
+                            height: {
+                              duration: 0.3,
+                              ease: [0.4, 0, 0.2, 1],
+                            },
+                            opacity: {
+                              duration: 0.25,
+                              ease: 'easeOut',
+                              delay: 0.1,
+                            },
+                          },
+                        }}
+                        exit={{
+                          height: 0,
+                          opacity: 0,
+                          transition: {
+                            height: {
+                              duration: 0.3,
+                              ease: [0.4, 0, 0.2, 1],
+                            },
+                            opacity: {
+                              duration: 0.15,
+                              ease: 'easeIn',
+                            },
+                          },
+                        }}
+                        style={{ overflow: 'hidden' }}
                       >
                         {item.a}
                       </motion.div>

@@ -59,7 +59,7 @@ export default function VideoTestimonials() {
   const duplicatedItems = [...VIDEO_TESTIMONIALS, ...VIDEO_TESTIMONIALS];
 
   return (
-    <section className="video-testimonials">
+    <section id="video-testimonials" className="video-testimonials">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h2

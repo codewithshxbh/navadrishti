@@ -1,7 +1,80 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+
+const StakeholderCard = ({
+  icon,
+  title,
+  description,
+  index,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  index: number;
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const { ref, isIntersecting } = useIntersectionObserver({
+    threshold: 0.2,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      className={`stakeholder-card ${isExpanded ? 'expanded' : ''}`}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      onClick={() => setIsExpanded(!isExpanded)}
+      style={{ cursor: 'pointer' }}
+    >
+      <div className="stakeholder-icon">{icon}</div>
+      <h3>{title}</h3>
+      <AnimatePresence mode="wait">
+        {isExpanded && (
+          <motion.div
+            initial={{ opacity: 0, height: 0, marginTop: 0 }}
+            animate={{ opacity: 1, height: 'auto', marginTop: 12 }}
+            exit={{ opacity: 0, height: 0, marginTop: 0 }}
+            transition={{
+              duration: 0.4,
+              ease: [0.4, 0, 0.2, 1],
+            }}
+            style={{ overflow: 'hidden' }}
+          >
+            <div className="feature-divider" />
+            <p>{description}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div
+        className="expand-indicator"
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsExpanded(!isExpanded);
+        }}
+      >
+        <span className="expand-text">
+          {isExpanded ? 'Click to contract' : 'Click to expand'}
+        </span>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          style={{
+            transform: isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)',
+            transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+          }}
+        >
+          <path d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </motion.div>
+  );
+};
 
 export default function Platform() {
   const { ref: sectionRef, isIntersecting: sectionVisible } =
@@ -26,7 +99,7 @@ export default function Platform() {
       ),
       title: 'NGOs',
       description:
-        'Manage projects, volunteers, campaigns, and fundraising with AI-powered tools and marketplace access.',
+        'Complete operational suite for project lifecycle management, volunteer coordination, campaign execution, and fundraising. AI-powered proposal writing, automated impact reports, and marketplace integration for selling products/services. Real-time GPS tracking for field activities, compliance automation, and direct connection with verified CSR partners.',
     },
     {
       icon: (
@@ -42,7 +115,7 @@ export default function Platform() {
       ),
       title: 'Companies',
       description:
-        'Plan CSR campaigns, find verified NGOs, track real-time impact, and automate compliance reporting.',
+        'End-to-end CSR management from budget planning to impact measurement. AI-powered NGO matching based on focus areas and geographic needs. Real-time fund utilization tracking with GPS-verified expenses and blockchain audit trails. Automated compliance reporting, CSR committee dashboard, and unspent fund management. Access marketplace to procure from social enterprises.',
     },
     {
       icon: (
@@ -58,7 +131,7 @@ export default function Platform() {
       ),
       title: 'Individuals',
       description:
-        'Discover verified causes, volunteer your skills, track your impact, and support NGOs directly.',
+        "Discover and connect with verified NGOs and causes aligned with your values. Volunteer your professional skills through the platform's talent marketplace. Track your contributions and see real-time impact of your donations. Participate in campaigns, join community events, and support social enterprises by purchasing their products. Build your social impact profile and join a network of changemakers.",
     },
   ];
 
@@ -89,19 +162,13 @@ export default function Platform() {
 
         <div className="stakeholder-grid">
           {stakeholders.map((stakeholder, index) => (
-            <motion.div
+            <StakeholderCard
               key={stakeholder.title}
-              className="stakeholder-card"
-              initial={{ opacity: 0, y: 30 }}
-              animate={
-                sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-              }
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="stakeholder-icon">{stakeholder.icon}</div>
-              <h3>{stakeholder.title}</h3>
-              <p>{stakeholder.description}</p>
-            </motion.div>
+              icon={stakeholder.icon}
+              title={stakeholder.title}
+              description={stakeholder.description}
+              index={index}
+            />
           ))}
         </div>
       </div>

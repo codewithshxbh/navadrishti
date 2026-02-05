@@ -33,6 +33,41 @@ export default function Navigation() {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [mobileMenuOpen]);
 
+  // Disable body scroll when mobile menu is open
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+    document.body.style.overflow = 'hidden';
+
+    // Prevent touch scrolling
+    const preventScroll = (e: TouchEvent) => {
+      e.preventDefault();
+    };
+    document.body.addEventListener('touchmove', preventScroll, {
+      passive: false,
+    });
+
+    return () => {
+      document.body.removeEventListener('touchmove', preventScroll);
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    };
+  }, [mobileMenuOpen]);
+
   const easeInOutCubic = (t: number): number => {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   };
@@ -43,45 +78,40 @@ export default function Navigation() {
   ) => {
     e.preventDefault();
 
-    // Close menu immediately for better perceived performance
+    // Close menu and restore scroll position first
     setMobileMenuOpen(false);
 
-    const element = document.querySelector(id);
-    if (element) {
-      const navHeight = 80;
-      const targetPosition =
-        element.getBoundingClientRect().top + window.pageYOffset - navHeight;
-      const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition;
+    // Wait for menu close animation and body position restore
+    setTimeout(() => {
+      const element = document.querySelector(id);
+      if (element) {
+        const navHeight = 80;
+        const targetPosition =
+          element.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
 
-      // Much shorter duration for mobile to feel instant
-      const isMobile = window.innerWidth <= 768;
-      const duration = isMobile ? 400 : 1200;
-      let startTime: number | null = null;
+        // Much shorter duration for mobile to feel instant
+        const isMobile = window.innerWidth <= 768;
+        const duration = isMobile ? 400 : 1200;
+        let startTime: number | null = null;
 
-      const animation = (currentTime: number) => {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const progress = Math.min(timeElapsed / duration, 1);
-        const ease = easeInOutCubic(progress);
+        const animation = (currentTime: number) => {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const progress = Math.min(timeElapsed / duration, 1);
+          const ease = easeInOutCubic(progress);
 
-        window.scrollTo(0, startPosition + distance * ease);
+          window.scrollTo(0, startPosition + distance * ease);
 
-        if (timeElapsed < duration) {
-          requestAnimationFrame(animation);
-        }
-      };
+          if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+          }
+        };
 
-      // Start immediately on mobile
-      if (isMobile) {
         requestAnimationFrame(animation);
-      } else {
-        // Delay scroll start slightly on desktop
-        requestAnimationFrame(() => {
-          requestAnimationFrame(animation);
-        });
       }
-    }
+    }, 100);
   };
 
   return (
@@ -133,7 +163,7 @@ export default function Navigation() {
                 href="#video-testimonials"
                 onClick={(e) => scrollToSection(e, '#video-testimonials')}
               >
-                Inspiration
+                Why We Do This
               </a>
             </li>
             <li>

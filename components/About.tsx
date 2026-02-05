@@ -38,7 +38,7 @@ const ProblemSolutionCard = ({
       onClick={() => setIsExpanded(!isExpanded)}
       style={{ cursor: 'pointer' }}
     >
-      <img src={image} alt={title} className="card-image" />
+      <div className="feature-icon">{icon}</div>
       <h3 id={`card-title-${index}`}>{title}</h3>
       <AnimatePresence mode="wait">
         {isExpanded && (
@@ -48,9 +48,8 @@ const ProblemSolutionCard = ({
             animate={{ opacity: 1, height: 'auto', marginTop: 12 }}
             exit={{ opacity: 0, height: 0, marginTop: 0 }}
             transition={{
-              height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
-              opacity: { duration: 0.2, delay: isExpanded ? 0.05 : 0 },
-              marginTop: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
+              duration: 0.4,
+              ease: [0.4, 0, 0.2, 1],
             }}
             style={{ overflow: 'hidden' }}
           >
@@ -61,7 +60,7 @@ const ProblemSolutionCard = ({
             >
               {problemText}
             </p>
-            <div className="solution-divider" aria-hidden="true"></div>
+            <div className="solution-divider" aria-hidden="true" />
             <p
               className="solution-text"
               role="region"
@@ -80,7 +79,7 @@ const ProblemSolutionCard = ({
         }}
       >
         <span className="expand-text">
-          {isExpanded ? 'Click to collapse' : 'Click to expand'}
+          {isExpanded ? 'Click to contract' : 'Click to expand'}
         </span>
         <svg
           viewBox="0 0 24 24"
@@ -89,7 +88,7 @@ const ProblemSolutionCard = ({
           strokeWidth="2"
           style={{
             transform: isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)',
-            transition: 'transform 0.4s ease',
+            transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
           <path d="M19 9l-7 7-7-7" />
@@ -155,7 +154,7 @@ const aboutData = [
       </svg>
     ),
     title: '72% SMEs Fail CSR Compliance',
-    problemText: `${formatNumber(40000)}+ eligible SMEs struggle with Section 135 compliance due to complex MCA filings, unspent fund rules, and cash flow unpredictability - trapping ${formatCurrency(5000)}+ Crore.`,
+    problemText: `${formatNumber(40000)}+ eligible SMEs struggle with Section 135 compliance due to complex regulatory requirements, unspent fund rules, and cash flow unpredictability - trapping ${formatCurrency(5000)}+ Crore.`,
     solutionText:
       'Automated filings, unspent fund management, and CSR-as-a-Service subscriptions unlocking trapped budgets.',
     image:
