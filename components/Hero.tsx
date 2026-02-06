@@ -114,17 +114,20 @@ export default function Hero() {
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title" style={{ color: '#ffffff' }}>
-              <span className="text-gradient">The Operating System</span>
+              <span className="text-gradient">
+                The Governance & Execution OS
+              </span>
               <br />
-              for Social Impact
+              for CSR and NGOs
             </h1>
             <p
               className="hero-subtitle"
               style={{ color: 'rgba(255, 255, 255, 0.9)' }}
             >
-              Replace scattered Excel sheets and manual processes with one
-              unified platform for NGOs, companies, and individuals to execute
-              and measure social impact at scale.
+              CA-backed trust verification. Milestone-governed project
+              execution. Field evidence with GPS. Cryptographic audit trails.
+              Everything needed to control trust, governance, proof, and money
+              in India's CSR ecosystem.
             </p>
             <div className="hero-cta">
               <a
@@ -201,15 +204,16 @@ export default function Hero() {
             {/* Mobile Title */}
             <h1 className="hero-mobile-title">
               <span className="mobile-title-highlight">
-                The Operating System
+                The Governance & Execution OS
               </span>
-              <span className="mobile-title-main">for Social Impact</span>
+              <span className="mobile-title-main">for CSR and NGOs</span>
             </h1>
 
             {/* Mobile Subtitle */}
             <p className="hero-mobile-subtitle">
-              One unified platform for NGOs, companies, and individuals to
-              execute and measure social impact at scale.
+              CA-backed verification. Milestone governance. Field evidence.
+              Cryptographic audit trails. Everything to control trust and
+              execution in India's CSR ecosystem.
             </p>
 
             {/* Mobile CTA */}

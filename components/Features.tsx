@@ -116,17 +116,35 @@ export default function Features() {
           }
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Complete Digital Infrastructure</h2>
+          <h2 className="section-title">Four-Layer Technical Architecture</h2>
           <p className="section-description">
-            Everything needed to run social impact work efficiently,
-            transparently, and at scale
+            Trust verification, milestone governance, field operations, and
+            unified platform—all integrated into one enterprise-grade system
           </p>
         </motion.div>
         <div className="features-grid">
           <FeatureCard
             index={0}
-            title="Project Management"
-            description="Complete project lifecycle management with task automation, milestone tracking, volunteer coordination, and campaign execution. Integrated workflows connect planning to impact measurement with real-time dashboards, resource allocation, and team collaboration tools that eliminate manual coordination overhead."
+            title="CA-Backed Trust System"
+            description="Private verification infrastructure powered by empanelled Chartered Accountants. NGOs and companies submit registration docs, financials, compliance certificates. OCR pre-checks format and consistency. CAs review in dedicated console, issue signed certificates with UDIN numbers. Badges visible on profiles: 'Verified by CA | UDIN: XXXXX | Valid till: YYYY'. No government API dependency. Legally safe, audit-defensible, and tamper-evident."
+            image="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=200&fit=crop&q=80"
+            icon={
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            }
+          />
+          <FeatureCard
+            index={1}
+            title="Milestone Governance Engine"
+            description="Every CSR project becomes a governed execution contract. Companies define budget, milestones, and evidence requirements upfront. NGOs submit GPS-tagged field proof—photos, reports, beneficiary data. Companies review and approve inside the platform. Payments happen via existing bank channels (Phase 1), with payment confirmations uploaded. Every approval hashed and logged. Cryptographic audit trail ensures dispute-proof history."
             image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=200&fit=crop&q=80"
             icon={
               <svg
@@ -137,17 +155,34 @@ export default function Features() {
                 stroke="currentColor"
                 strokeWidth="2"
               >
-                <rect x="3" y="3" width="7" height="7" />
-                <rect x="14" y="3" width="7" height="7" />
-                <rect x="14" y="14" width="7" height="7" />
-                <rect x="3" y="14" width="7" height="7" />
+                <path d="M9 11l3 3L22 4" />
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
               </svg>
             }
           />
           <FeatureCard
-            index={1}
-            title="AI-Powered Assistance"
-            description="Advanced AI capabilities for campaign creation, automated proposal writing, intelligent documentation management, and structured impact report generation. Natural language processing helps draft compelling narratives, while machine learning suggests optimal strategies based on historical success patterns and stakeholder preferences."
+            index={2}
+            title="Offline Field Operations App"
+            description="Mobile app/PWA for rural NGO field staff. Works fully offline. Capture beneficiary data, photos, videos, GPS location, timestamps—all stored locally. When network available, auto-syncs to platform with deduplication and retry logic. Immutable field evidence linked to milestones. Companies see real-time impact proof. No more fake reports or delayed documentation. Built for low-bandwidth, vernacular, and grassroots operations."
+            image="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=200&fit=crop&q=80"
+            icon={
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                <line x1="12" y1="18" x2="12" y2="18" />
+              </svg>
+            }
+          />
+          <FeatureCard
+            index={3}
+            title="AI Orchestration Layer"
+            description="CSR co-pilot for companies: collects budget, cause, region via conversational UI. Generates 3-4 campaign concepts with SDG alignment, beneficiary estimates, Schedule VII mapping. Auto-matches verified NGOs by cause, geography, track record. Creates proposals, contracts, compliance document templates, impact validation reports. Turns CSR planning from months to minutes. AI assists, humans approve—never bypasses governance."
             image="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop&q=80"
             icon={
               <svg
@@ -165,67 +200,9 @@ export default function Features() {
             }
           />
           <FeatureCard
-            index={2}
-            title="Verified Ecosystem"
-            description="Multi-tier verification system ensuring trust across the network. AI-powered e-KYC validates NGO registrations, financials, and impact history. Companies get verified CSR partners, NGOs connect with authenticated funders, and professionals join a credible marketplace - all backed by blockchain audit trails and transparent reputation scoring."
-            image="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=200&fit=crop&q=80"
-            icon={
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                <polyline points="22 4 12 14.01 9 11.01" />
-              </svg>
-            }
-          />
-          <FeatureCard
-            index={3}
-            title="Financial Governance"
-            description="End-to-end financial tracking from budget allocation to beneficiary impact. Real-time fund utilization monitoring, unspent fund management, and compliance reporting. GPS-enabled expense verification ensures every rupee is traceable with blockchain-backed audit logs preventing fraud and ensuring transparent fund governance."
-            image="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=200&fit=crop&q=80"
-            icon={
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <line x1="12" y1="1" x2="12" y2="23" />
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
-            }
-          />
-          <FeatureCard
             index={4}
-            title="Products & Services"
-            description="Integrated marketplace enabling NGOs to sell handcrafted products, offer professional consulting services, and create sustainable revenue streams beyond traditional donations. Built-in payment processing, inventory management, and delivery tracking. Companies can procure through CSR budgets while supporting social enterprises and building long-term partnerships."
-            image="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&h=200&fit=crop&q=80"
-            icon={
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <circle cx="9" cy="21" r="1" />
-                <circle cx="20" cy="21" r="1" />
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-              </svg>
-            }
-          />
-          <FeatureCard
-            index={5}
-            title="Audit & Compliance"
-            description="Comprehensive audit infrastructure with immutable activity logs, multi-level approval workflows, and automated compliance reporting. Every transaction, document change, and stakeholder interaction is permanently recorded. Built-in regulatory templates for CSR committee reports. Real-time compliance dashboards highlight risks and ensure regulatory adherence."
+            title="Tamper-Evident Audit System"
+            description="Append-only audit ledger for all critical actions: CA verifications, milestone approvals, payment confirmations, compliance events. Every action hashed, timestamped, and logged. Optional: daily root hash anchored to public blockchain (Polygon) for external tamper-proofing. Does NOT move money on-chain. Blockchain used only for cryptographic audit trail. Court-defensible, dispute-proof, enterprise-grade compliance infrastructure."
             image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=200&fit=crop&q=80"
             icon={
               <svg
@@ -240,7 +217,27 @@ export default function Features() {
                 <polyline points="14 2 14 8 20 8" />
                 <line x1="16" y1="13" x2="8" y2="13" />
                 <line x1="16" y1="17" x2="8" y2="17" />
-                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            }
+          />
+          <FeatureCard
+            index={5}
+            title="Unified Discovery Platform"
+            description="CSR projects, service requests, volunteer opportunities, marketplace items—all published as structured listings with role-based access. Feed engine distributes opportunities to eligible users. Companies discover verified NGOs. NGOs discover CSR projects. Individuals find volunteer roles. Every listing tied to verified identity, governed execution, and audit trail. Single source of truth replacing WhatsApp/email chaos with searchable, governed ecosystem."
+            image="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&h=200&fit=crop&q=80"
+            icon={
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
               </svg>
             }
           />

@@ -116,7 +116,7 @@ export default function Platform() {
       ),
       title: 'NGOs',
       description:
-        'Complete operational suite for project lifecycle management, volunteer coordination, campaign execution, and fundraising. AI-powered proposal writing, automated impact reports, and marketplace integration for selling products/services. Real-time GPS tracking for field activities, compliance automation, and direct connection with verified CSR partners.',
+        'Get CA-verified to unlock CSR opportunities. Submit registration docs, financials, compliance certificates—CA reviews and issues signed certification badge. Run milestone-governed projects with built-in evidence submission. Use offline field app to capture GPS-tagged beneficiary data, photos, reports. Access AI tools for proposal writing. Discover CSR projects, post service offers, recruit volunteers. Unified operating system replacing Excel, WhatsApp, and fragmented tools.',
     },
     {
       icon: (
@@ -132,7 +132,7 @@ export default function Platform() {
       ),
       title: 'Companies',
       description:
-        'End-to-end CSR management from budget planning to impact measurement. AI-powered NGO matching based on focus areas and geographic needs. Real-time fund utilization tracking with GPS-verified expenses and blockchain audit trails. Automated compliance reporting, CSR committee dashboard, and unspent fund management. Access marketplace to procure from social enterprises.',
+        'Use AI co-pilot to generate CSR campaign concepts from budget, cause, and region. Auto-match with CA-verified NGOs. Define milestone execution contracts with evidence requirements. Review GPS-tagged field proof and approve milestones inside platform. Payments via existing bank channels; upload confirmations. Every action logged with cryptographic audit trail. Real-time compliance dashboards, automated reporting, unspent fund management. Turn months of planning into minutes.',
     },
     {
       icon: (
@@ -148,7 +148,7 @@ export default function Platform() {
       ),
       title: 'Individuals',
       description:
-        "Discover and connect with verified NGOs and causes aligned with your values. Volunteer your professional skills through the platform's talent marketplace. Track your contributions and see real-time impact of your donations. Participate in campaigns, join community events, and support social enterprises by purchasing their products. Build your social impact profile and join a network of changemakers.",
+        'Discover CA-verified NGOs and causes. Apply for volunteer opportunities with verified organizations. Track your contributions with transparent, evidence-backed impact reports. Support social enterprises through the marketplace. Join campaigns and community events. Build your impact profile in a trust-based network. No more uncertainty about where your time or donations go—everything backed by field evidence and audit trails.',
     },
   ];
 

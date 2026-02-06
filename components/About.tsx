@@ -120,7 +120,27 @@ interface AboutProps extends BaseComponentProps {}
 
 const aboutData = [
   {
-    id: 'manual-reporting',
+    id: 'trust-verification',
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+    title: 'Trust Crisis: 15-20% CSR Fraud Rate',
+    problemText:
+      'Companies cannot verify NGO authenticity reliably. No standardized verification exists. Government portals are incomplete. This leads to 15-20% fraud rate and ${formatCurrency(50000)} Crore underutilization.',
+    solutionText:
+      'CA-backed private verification system. Chartered Accountants review registration, financials, compliance docs. Issue signed certificates with UDIN numbers. Every verification is audit-logged and tamper-evident.',
+    image:
+      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop&q=80',
+  },
+  {
+    id: 'milestone-governance',
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -132,54 +152,16 @@ const aboutData = [
         <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
       </svg>
     ),
-    title: 'Manual Reporting Creates 60% Delays',
+    title: 'No Standard Project Execution Process',
     problemText:
-      'Companies and NGOs still rely on Excel sheets and PDF reports, causing massive delays in fund utilization tracking and compliance documentation.',
+      'CSR projects run on WhatsApp, email, and Excel chaos. No structured milestones. No evidence requirements. No approval workflows. Companies lose visibility after releasing funds.',
     solutionText:
-      'GPS surveillance + blockchain audit logs via mobile SDK. Real-time tracking with 90% fraud reduction - every rupee traced from approval to beneficiary impact.',
+      'Milestone-governed execution contracts. Define budget, phases, evidence requirements upfront. NGOs submit GPS-tagged proof. Companies approve inside platform. Every action logged with cryptographic hashes.',
     image:
       'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=200&fit=crop&q=80',
   },
   {
-    id: 'weak-verification',
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-    title: 'Weak Verification Causes 15-20% Fraud',
-    problemText: `${formatCurrency(50000)} Crore CSR budget underutilized because companies can't verify NGO authenticity - leading to 15-20% fraud and fund mismanagement.`,
-    solutionText:
-      'AI-powered e-KYC + Verification badges. 5x faster partner onboarding with complete transparency and audit trails.',
-    image:
-      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop&q=80',
-  },
-  {
-    id: 'sme-compliance',
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-    title: '72% SMEs Fail CSR Compliance',
-    problemText: `${formatNumber(40000)}+ eligible SMEs struggle with Section 135 compliance due to complex regulatory requirements, unspent fund rules, and cash flow unpredictability - trapping ${formatCurrency(5000)}+ Crore.`,
-    solutionText:
-      'Automated filings, unspent fund management, and CSR-as-a-Service subscriptions unlocking trapped budgets.',
-    image:
-      'https://images.unsplash.com/photo-1664575602276-acd073f104c1?w=400&h=200&fit=crop&q=80',
-  },
-  {
-    id: 'urban-only',
+    id: 'field-evidence',
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -191,16 +173,61 @@ const aboutData = [
         <polyline points="9 22 9 12 15 12 15 22" />
       </svg>
     ),
-    title: '80% Urban-Only, Zero Rural Reach',
+    title: '80% Rural NGOs Digitally Excluded',
     problemText:
-      'Existing platforms serve only 20% urban NGOs. 2M+ small/medium rural NGOs remain invisible due to tech barriers, internet dependency, and English-only interfaces.',
+      '2M+ rural NGOs cannot access CSR opportunities. They lack internet reliability, English literacy, and tech infrastructure. Existing platforms serve only urban, well-connected organizations.',
     solutionText:
-      'Offline-first vernacular mobile app + GPS kits for grassroots tracking. Works without internet, supports 12+ Indian languages, empowering rural NGOs.',
+      'Offline-first mobile app with GPS evidence capture. Works without internet. Local language support. Field staff record beneficiary data, photos, geo-location. Auto-syncs when network available. Immutable audit trail.',
     image:
       'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=200&fit=crop&q=80',
   },
   {
-    id: 'excel-operations',
+    id: 'audit-compliance',
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+      </svg>
+    ),
+    title: '72% SMEs Unable to Maintain Audit Trails',
+    problemText:
+      '${formatNumber(40000)}+ SMEs struggle with CSR compliance documentation. No structured audit logs. Manual document management. Cannot prove fund utilization. Risk penalties and trapped ${formatCurrency(5000)}+ Crore.',
+    solutionText:
+      'Append-only audit ledger with blockchain anchoring. Every action hashed and logged. CA verifications, milestone approvals, payment confirmations cryptographically recorded. Court-defensible, tamper-proof compliance trail.',
+    image:
+      'https://images.unsplash.com/photo-1664575602276-acd073f104c1?w=400&h=200&fit=crop&q=80',
+  },
+  {
+    id: 'ai-orchestration',
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5" />
+        <path d="M2 12l10 5 10-5" />
+      </svg>
+    ),
+    title: '80% CSR Budgets Rushed in Q4',
+    problemText:
+      'Companies dump 80% of CSR in March quarter-end. Poor partner selection. Zero impact measurement. No time for proper planning, vetting, or execution. Compliance-only mindset prevails.',
+    solutionText:
+      'AI CSR co-pilot generates campaign concepts from budget, cause, region inputs. Auto-matches verified NGOs. Creates proposals, contracts, compliance docs, impact reports. Turns planning from months to minutes.',
+    image:
+      'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=200&fit=crop&q=80',
+  },
+  {
+    id: 'unified-platform',
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -214,34 +241,13 @@ const aboutData = [
         <rect x="3" y="14" width="7" height="7" />
       </svg>
     ),
-    title: '70% Still Use Excel for Operations',
+    title: '70% Rely on Fragmented Tools',
     problemText:
-      'No unified system exists. NGOs juggle 5-10 different tools for projects, volunteers, campaigns, fundraising, and compliance - creating data silos, inefficiency, and operational chaos across teams.',
+      'NGOs juggle 5-10 different tools for operations. Excel for projects, WhatsApp for coordination, Google Forms for volunteers, separate payment tracking. Data silos, duplication, no single source of truth.',
     solutionText:
-      'Complete ERP + CRM + Marketplace + AI stack. Single platform replacing all tools with network effects that lock competitors out through ecosystem advantages.',
+      'Unified operating system for social impact. Projects, campaigns, volunteers, marketplace, compliance, analytics—all in one platform. Governed execution tied to verified identities and audit trails. Network effects lock in ecosystem.',
     image:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&q=80',
-  },
-  {
-    id: 'q4-rush',
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 6v6l4 2" />
-      </svg>
-    ),
-    title: '80% Funds Rushed in Q4 Year-End',
-    problemText:
-      'Companies dump 80% of CSR budgets in March quarter-end rush, leading to poor partner selection, zero impact measurement, and compliance-only mindset.',
-    solutionText:
-      'ML-powered CSR calendar with auto-matching and annual retainers. Smart planning throughout the year ensuring strategic impact vs last-minute checkboxes.',
-    image:
-      'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=200&fit=crop&q=80',
   },
 ] as const;
 
@@ -269,11 +275,11 @@ export default function About({ className, ...props }: AboutProps) {
           transition={{ duration: 0.6 }}
         >
           <h2 id="about-title" className="section-title">
-            Solving Critical Loopholes in India's CSR Ecosystem
+            The Four Core Problems We Solve
           </h2>
           <p className="section-description">
-            Addressing systemic gaps that waste ₹{formatNumber(30000)}+ Crore in
-            annual CSR spending
+            Building trust infrastructure, governance systems, field evidence,
+            and audit trails—the missing foundation of India's CSR ecosystem
           </p>
         </motion.div>
 
