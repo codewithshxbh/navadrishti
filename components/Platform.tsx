@@ -32,20 +32,36 @@ const StakeholderCard = ({
     >
       <div className="stakeholder-icon">{icon}</div>
       <h3>{title}</h3>
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false}>
         {isExpanded && (
           <motion.div
-            initial={{ opacity: 0, height: 0, marginTop: 0 }}
-            animate={{ opacity: 1, height: 'auto', marginTop: 12 }}
-            exit={{ opacity: 0, height: 0, marginTop: 0 }}
-            transition={{
-              duration: 0.4,
-              ease: [0.4, 0, 0.2, 1],
+            initial={{ opacity: 0, maxHeight: 0 }}
+            animate={{
+              opacity: 1,
+              maxHeight: 500,
+              transition: {
+                maxHeight: { duration: 0.18, ease: [0.32, 0.72, 0, 1] },
+                opacity: { duration: 0.12, ease: 'easeOut' },
+              },
             }}
-            style={{ overflow: 'hidden' }}
+            exit={{
+              opacity: 0,
+              maxHeight: 0,
+              transition: {
+                opacity: { duration: 0.08, ease: 'easeIn' },
+                maxHeight: {
+                  duration: 0.16,
+                  ease: [0.32, 0.72, 0, 1],
+                  delay: 0.02,
+                },
+              },
+            }}
+            style={{ overflow: 'hidden', willChange: 'max-height' }}
           >
-            <div className="feature-divider" />
-            <p>{description}</p>
+            <div style={{ marginTop: 12 }}>
+              <div className="feature-divider" />
+              <p>{description}</p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -59,18 +75,19 @@ const StakeholderCard = ({
         <span className="expand-text">
           {isExpanded ? 'Click to contract' : 'Click to expand'}
         </span>
-        <svg
+        <motion.svg
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
-          style={{
-            transform: isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)',
-            transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+          animate={{ rotate: isExpanded ? 0 : -90 }}
+          transition={{
+            duration: 0.18,
+            ease: [0.32, 0.72, 0, 1],
           }}
         >
           <path d="M19 9l-7 7-7-7" />
-        </svg>
+        </motion.svg>
       </div>
     </motion.div>
   );

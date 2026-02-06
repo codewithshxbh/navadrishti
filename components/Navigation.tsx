@@ -141,7 +141,7 @@ export default function Navigation() {
               loading="eager"
             />
             <img
-              src="/photos/logo1.svg"
+              src={scrolled ? '/photos/logo1.svg' : '/photos/logo.svg'}
               alt="Navadrishti"
               className="logo-img logo-mobile"
               loading="eager"

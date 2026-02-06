@@ -164,15 +164,15 @@ export default function FAQ() {
                   >
                     <span>{item.q}</span>
                     <motion.svg
-                      className={`faq-icon ${openQuestion === index ? 'rotate' : ''}`}
+                      className="faq-icon"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
                       animate={{ rotate: openQuestion === index ? 180 : 0 }}
                       transition={{
-                        duration: 0.4,
-                        ease: [0.4, 0, 0.2, 1],
+                        duration: 0.18,
+                        ease: [0.32, 0.72, 0, 1],
                       }}
                     >
                       <path d="M19 9l-7 7-7-7" />
@@ -182,39 +182,38 @@ export default function FAQ() {
                     {openQuestion === index && (
                       <motion.div
                         className="faq-answer"
-                        initial={{ height: 0, opacity: 0 }}
+                        initial={{ maxHeight: 0, opacity: 0 }}
                         animate={{
-                          height: 'auto',
+                          maxHeight: 400,
                           opacity: 1,
                           transition: {
-                            height: {
-                              duration: 0.3,
-                              ease: [0.4, 0, 0.2, 1],
+                            maxHeight: {
+                              duration: 0.18,
+                              ease: [0.32, 0.72, 0, 1],
                             },
-                            opacity: {
-                              duration: 0.25,
-                              ease: 'easeOut',
-                              delay: 0.1,
-                            },
+                            opacity: { duration: 0.12, ease: 'easeOut' },
                           },
                         }}
                         exit={{
-                          height: 0,
+                          maxHeight: 0,
                           opacity: 0,
                           transition: {
-                            height: {
-                              duration: 0.3,
-                              ease: [0.4, 0, 0.2, 1],
-                            },
-                            opacity: {
-                              duration: 0.15,
-                              ease: 'easeIn',
+                            opacity: { duration: 0.08, ease: 'easeIn' },
+                            maxHeight: {
+                              duration: 0.16,
+                              ease: [0.32, 0.72, 0, 1],
+                              delay: 0.02,
                             },
                           },
                         }}
-                        style={{ overflow: 'hidden' }}
+                        style={{
+                          overflow: 'hidden',
+                          willChange: 'max-height',
+                        }}
                       >
-                        {item.a}
+                        <div style={{ padding: '0 2rem 1.5rem 2rem' }}>
+                          {item.a}
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
