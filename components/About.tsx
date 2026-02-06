@@ -275,7 +275,7 @@ export default function About({ className, ...props }: AboutProps) {
           transition={{ duration: 0.6 }}
         >
           <h2 id="about-title" className="section-title">
-            The Four Core Problems We Solve
+            The Core Problems We Solve
           </h2>
           <p className="section-description">
             Building trust infrastructure, governance systems, field evidence,

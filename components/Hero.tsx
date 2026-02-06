@@ -118,16 +118,15 @@ export default function Hero() {
                 The Governance & Execution OS
               </span>
               <br />
-              for CSR and NGOs
+              for Social Impact
             </h1>
             <p
               className="hero-subtitle"
               style={{ color: 'rgba(255, 255, 255, 0.9)' }}
             >
-              CA-backed trust verification. Milestone-governed project
-              execution. Field evidence with GPS. Cryptographic audit trails.
-              Everything needed to control trust, governance, proof, and money
-              in India's CSR ecosystem.
+              CA-backed trust verification. Milestone-governed execution. Field
+              evidence with GPS. Cryptographic audit trails. Everything needed
+              to control trust, governance, proof, and money in social impact.
             </p>
             <div className="hero-cta">
               <a
@@ -206,14 +205,14 @@ export default function Hero() {
               <span className="mobile-title-highlight">
                 The Governance & Execution OS
               </span>
-              <span className="mobile-title-main">for CSR and NGOs</span>
+              <span className="mobile-title-main">for Social Impact</span>
             </h1>
 
             {/* Mobile Subtitle */}
             <p className="hero-mobile-subtitle">
               CA-backed verification. Milestone governance. Field evidence.
               Cryptographic audit trails. Everything to control trust and
-              execution in India's CSR ecosystem.
+              execution.
             </p>
 
             {/* Mobile CTA */}
