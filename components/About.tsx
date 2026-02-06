@@ -132,8 +132,7 @@ const aboutData = [
       </svg>
     ),
     title: 'Trust Crisis: 15-20% CSR Fraud Rate',
-    problemText:
-      'Companies cannot verify NGO authenticity reliably. No standardized verification exists. Government portals are incomplete. This leads to 15-20% fraud rate and ${formatCurrency(50000)} Crore underutilization.',
+    problemText: `Companies cannot verify NGO authenticity reliably. No standardized verification exists. Government portals are incomplete. This leads to 15-20% fraud rate and ${formatCurrency(50000)} Crore underutilization.`,
     solutionText:
       'CA-backed private verification system. Chartered Accountants review registration, financials, compliance docs. Issue signed certificates with UDIN numbers. Every verification is audit-logged and tamper-evident.',
     image:
@@ -197,8 +196,7 @@ const aboutData = [
       </svg>
     ),
     title: '72% SMEs Unable to Maintain Audit Trails',
-    problemText:
-      '${formatNumber(40000)}+ SMEs struggle with CSR compliance documentation. No structured audit logs. Manual document management. Cannot prove fund utilization. Risk penalties and trapped ${formatCurrency(5000)}+ Crore.',
+    problemText: `${formatNumber(40000)}+ SMEs struggle with CSR compliance documentation. No structured audit logs. Manual document management. Cannot prove fund utilization. Risk penalties and trapped ${formatCurrency(5000)}+ Crore.`,
     solutionText:
       'Append-only audit ledger with blockchain anchoring. Every action hashed and logged. CA verifications, milestone approvals, payment confirmations cryptographically recorded. Court-defensible, tamper-proof compliance trail.',
     image:

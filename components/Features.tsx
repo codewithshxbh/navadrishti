@@ -116,7 +116,7 @@ export default function Features() {
           }
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Four-Layer Technical Architecture</h2>
+          <h2 className="section-title">Layered Technical Architecture</h2>
           <p className="section-description">
             Trust verification, milestone governance, field operations, and
             unified platform—all integrated into one enterprise-grade system
