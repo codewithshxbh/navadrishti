@@ -4809,7 +4809,7 @@ section:nth-child(6) {
 
 /* Mobile Title */
 .hero-mobile-title {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 16px;
@@ -4820,14 +4820,14 @@ section:nth-child(6) {
 
 .mobile-title-highlight {
   color: #ffffff;
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
 
 .mobile-title-main {
   color: #ffffff;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
@@ -5017,15 +5017,15 @@ section:nth-child(6) {
 /* Small Mobile Adjustments */
 @media (max-width: 375px) {
   .hero-mobile-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .mobile-title-highlight {
-    font-size: 1.9rem;
+    font-size: 1.65rem;
   }
 
   .mobile-title-main {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .hero-mobile-subtitle {
