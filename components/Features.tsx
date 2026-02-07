@@ -144,7 +144,7 @@ export default function Features() {
           <FeatureCard
             index={1}
             title="Milestone Governance Engine"
-            description="Every CSR project becomes a governed execution contract. Companies define budget, milestones, and evidence requirements upfront. NGOs submit GPS-tagged field proof—photos, reports, beneficiary data. Companies review and approve inside the platform. Payments happen via existing bank channels (Phase 1), with payment confirmations uploaded. Every approval hashed and logged. Cryptographic audit trail ensures dispute-proof history."
+            description="Every CSR project becomes a governed execution contract. Companies define budget, milestones, and evidence requirements upfront. NGOs submit GPS-tagged field proof—photos, reports, beneficiary data. Companies review and approve inside the platform. Payments happen via existing bank channels, with payment confirmations uploaded. Every approval hashed and logged. Cryptographic audit trail ensures dispute-proof history."
             image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=200&fit=crop&q=80"
             icon={
               <svg
@@ -202,7 +202,7 @@ export default function Features() {
           <FeatureCard
             index={4}
             title="Tamper-Evident Audit System"
-            description="Append-only audit ledger for all critical actions: CA verifications, milestone approvals, payment confirmations, compliance events. Every action hashed, timestamped, and logged. Optional: daily root hash anchored to public blockchain (Polygon) for external tamper-proofing. Does NOT move money on-chain. Blockchain used only for cryptographic audit trail. Court-defensible, dispute-proof, enterprise-grade compliance infrastructure."
+            description="Append-only audit ledger for all critical actions: CA verifications, milestone approvals, payment confirmations, compliance events. Every action hashed, timestamped, and logged. Daily root hash anchored to public blockchain for external tamper-proofing. Does NOT move money on-chain. Blockchain used only for cryptographic audit trail. Court-defensible, dispute-proof, enterprise-grade compliance infrastructure."
             image="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=200&fit=crop&q=80"
             icon={
               <svg
