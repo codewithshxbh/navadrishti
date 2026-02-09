@@ -8,7 +8,6 @@ import Features from '@/components/Features';
 import VideoTestimonials from '@/components/VideoTestimonials';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
-import CursorEffect from '@/components/CursorEffect';
 import ScrollProgress from '@/components/ScrollProgress';
 import PremiumEffects from '@/components/PremiumEffects';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -16,7 +15,6 @@ import ScrollToTop from '@/components/ScrollToTop';
 export default function Home() {
   return (
     <>
-      <CursorEffect />
       <ScrollProgress />
       <PremiumEffects />
       <Navigation />

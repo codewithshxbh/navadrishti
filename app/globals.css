@@ -2902,47 +2902,9 @@ pre:hover::before {
    Advanced Premium Enhancements
    ======================================== */
 
-/* Custom Cursor Effect */
+/* Normal Cursor - Custom cursor removed */
 body {
-  cursor: none;
-}
-
-.custom-cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ff8c42;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transition: all 0.1s ease;
-  transform: translate(-50%, -50%);
-}
-
-.custom-cursor.hover {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 107, 53, 0.3),
-    rgba(255, 140, 66, 0.3)
-  );
-  border-color: #ff6b35;
-  box-shadow:
-    0 0 25px rgba(255, 107, 53, 0.6),
-    0 0 40px rgba(255, 140, 66, 0.4);
-}
-
-.cursor-dot {
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  background: #ff8c42;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10000;
-  transition: transform 0.05s ease;
-  transform: translate(-50%, -50%);
+  cursor: auto;
 }
 
 /* Re-enable cursor for inputs and buttons */
@@ -3177,14 +3139,9 @@ select:focus {
 
 /* Advanced Mobile Optimizations */
 @media (max-width: 768px) {
-  /* Disable custom cursor on mobile */
+  /* Normal cursor on mobile */
   body {
     cursor: auto;
-  }
-
-  .custom-cursor,
-  .cursor-dot {
-    display: none;
   }
 
   /* Disable 3D transforms on mobile for performance */
@@ -3337,44 +3294,8 @@ pre {
    Senior Developer Grade CSS
    ======================================== */
 
-/* Custom Cursor System */
-.custom-cursor {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #ff8c42;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10000;
-  transform: translate(-50%, -50%);
-  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.custom-cursor.hover {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 107, 53, 0.25),
-    rgba(255, 140, 66, 0.25)
-  );
-  border-color: #ff6b35;
-  box-shadow:
-    0 0 30px rgba(255, 107, 53, 0.7),
-    0 0 50px rgba(255, 140, 66, 0.5);
-}
-
-.cursor-dot {
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  background: #ff8c42;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10001;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px rgba(255, 140, 66, 0.6);
-}
+/* Custom Cursor System - Removed */
+/* Normal cursor is used now */
 
 /* Page Loader */
 .page-loader {
@@ -4375,10 +4296,7 @@ section:nth-child(6) {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
-  .custom-cursor,
-  .cursor-dot {
-    display: none;
-  }
+  /* Custom cursor removed */
 }
 
 /* High Performance Animations */
@@ -4387,8 +4305,6 @@ section:nth-child(6) {
 }
 
 .hero-canvas,
-.custom-cursor,
-.cursor-dot,
 .scroll-progress {
   will-change: transform;
 }
