@@ -137,8 +137,8 @@ export default function Hero() {
               >
                 Explore Platform
               </a>
-              <a href="#features" className="btn-secondary">
-                Learn More
+              <a href="mailto:connect@navadrishti.in" className="btn-secondary">
+                Contact Us
               </a>
             </div>
           </div>
@@ -225,8 +225,8 @@ export default function Hero() {
               >
                 Explore Platform
               </a>
-              <a href="#features" className="btn-secondary">
-                Learn More
+              <a href="mailto:connect@navadrishti.in" className="btn-secondary">
+                Contact Us
               </a>
             </div>
           </div>
