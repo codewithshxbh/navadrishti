@@ -129,14 +129,17 @@ export default function Hero() {
               to control trust, governance, proof, and money in social impact.
             </p>
             <div className="hero-cta">
-              <a
-                href="https://app.navadrishti.in"
-                target="_blank"
-                rel="noopener noreferrer"
+              <span
                 className="btn-primary"
+                aria-disabled="true"
+                style={{
+                  opacity: 0.5,
+                  cursor: 'not-allowed',
+                  pointerEvents: 'none',
+                }}
               >
                 Explore Platform
-              </a>
+              </span>
               <a href="mailto:connect@navadrishti.in" className="btn-secondary">
                 Contact Us
               </a>
@@ -217,14 +220,17 @@ export default function Hero() {
 
             {/* Mobile CTA */}
             <div className="hero-mobile-cta">
-              <a
-                href="https://app.navadrishti.in"
-                target="_blank"
-                rel="noopener noreferrer"
+              <span
                 className="btn-primary"
+                aria-disabled="true"
+                style={{
+                  opacity: 0.5,
+                  cursor: 'not-allowed',
+                  pointerEvents: 'none',
+                }}
               >
                 Explore Platform
-              </a>
+              </span>
               <a href="mailto:connect@navadrishti.in" className="btn-secondary">
                 Contact Us
               </a>
