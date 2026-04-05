@@ -61,25 +61,9 @@ export default function VideoTestimonials() {
   return (
     <section id="video-testimonials" className="video-testimonials">
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <h2
-            style={{
-              fontSize: '2.5rem',
-              fontWeight: 700,
-              color: '#1a1a1a',
-              marginBottom: '1rem',
-            }}
-          >
-            This is why we do this
-          </h2>
-          <p
-            style={{
-              fontSize: '1.1rem',
-              color: 'rgba(0, 0, 0, 0.7)',
-              maxWidth: '600px',
-              margin: '0 auto',
-            }}
-          >
+        <div className="video-testimonials-header">
+          <h2 className="video-testimonials-title">This is why we do this</h2>
+          <p className="video-testimonials-subtitle">
             The passion and purpose behind every work we do
           </p>
         </div>

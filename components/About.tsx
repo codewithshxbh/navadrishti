@@ -1,118 +1,67 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { cn, formatNumber, formatCurrency } from '@/utils/helpers';
 import type { BaseComponentProps } from '@/types/common';
 
-interface ProblemSolutionCardProps extends BaseComponentProps {
+interface ProblemRowProps extends BaseComponentProps {
   icon: React.ReactNode;
   title: string;
+  metric: string;
   problemText: string;
   solutionText: string;
+  outcome: string;
   index: number;
-  image: string;
 }
 
-const ProblemSolutionCard = ({
+const ProblemRow = ({
   icon,
   title,
+  metric,
   problemText,
   solutionText,
+  outcome,
   index,
   className,
-  image,
-}: ProblemSolutionCardProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const { ref, isIntersecting } = useIntersectionObserver({
-    threshold: 0.2,
-  });
-
+}: ProblemRowProps) => {
   return (
-    <div
-      ref={ref}
-      className={cn('about-card', isExpanded && 'expanded', className)}
+    <article
+      className={cn('problem-row', className)}
       role="article"
       aria-labelledby={`card-title-${index}`}
-      onClick={() => setIsExpanded(!isExpanded)}
-      style={{ cursor: 'pointer' }}
     >
-      <div className="feature-icon">{icon}</div>
-      <h3 id={`card-title-${index}`}>{title}</h3>
-      <AnimatePresence initial={false}>
-        {isExpanded && (
-          <motion.div
-            className="problem-solution-content"
-            initial={{ opacity: 0, maxHeight: 0 }}
-            animate={{
-              opacity: 1,
-              maxHeight: 600,
-              transition: {
-                maxHeight: { duration: 0.18, ease: [0.32, 0.72, 0, 1] },
-                opacity: { duration: 0.12, ease: 'easeOut' },
-              },
-            }}
-            exit={{
-              opacity: 0,
-              maxHeight: 0,
-              transition: {
-                opacity: { duration: 0.08, ease: 'easeIn' },
-                maxHeight: {
-                  duration: 0.16,
-                  ease: [0.32, 0.72, 0, 1],
-                  delay: 0.02,
-                },
-              },
-            }}
-          >
-            <div className="problem-solution-inner">
-              <p
-                className="problem-text"
-                role="region"
-                aria-label="Problem description"
-              >
-                {problemText}
-              </p>
-              <div className="solution-divider" aria-hidden="true" />
-              <p
-                className="solution-text"
-                role="region"
-                aria-label="Solution description"
-              >
-                <strong>Solution:</strong> {solutionText}
-              </p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <div
-        className="expand-indicator"
-        onClick={(e) => {
-          e.stopPropagation();
-          setIsExpanded(!isExpanded);
-        }}
-      >
-        <span className="expand-text">
-          {isExpanded ? 'Click to contract' : 'Click to expand'}
-        </span>
-        <motion.svg
+      <header className="problem-row-head">
+        <div className="feature-icon">{icon}</div>
+        <div>
+          <h3 id={`card-title-${index}`}>{title}</h3>
+          <p className="problem-metric">{metric}</p>
+        </div>
+      </header>
+
+      <div className="problem-row-body">
+        <div>
+          <p className="problem-label">Problem</p>
+          <p className="problem-text">{problemText}</p>
+        </div>
+        <div>
+          <p className="solution-label">What Navadrishti Changes</p>
+          <p className="solution-text">{solutionText}</p>
+        </div>
+      </div>
+
+      <div className="problem-outcome">
+        <svg
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
-          animate={{
-            rotate: isExpanded ? 0 : -90,
-          }}
-          transition={{
-            duration: 0.18,
-            ease: [0.32, 0.72, 0, 1],
-          }}
         >
-          <path d="M19 9l-7 7-7-7" />
-        </motion.svg>
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
+        <span>{outcome}</span>
       </div>
-    </div>
+    </article>
   );
 };
 
@@ -131,12 +80,13 @@ const aboutData = [
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
-    title: 'Trust Crisis: 15-20% CSR Fraud Rate',
-    problemText: `Companies cannot verify NGO authenticity reliably. No standardized verification exists. Government portals are incomplete. This leads to 15-20% fraud rate and ${formatCurrency(50000)} Crore underutilization.`,
+    title: 'Trust Crisis in NGO Discovery',
+    metric: '15-20% estimated CSR fraud risk',
+    problemText: `Companies struggle to validate NGO credibility. With no consistent verification layer, 15-20% fraud risk persists and nearly ${formatCurrency(50000)} Crore stays underutilized.`,
     solutionText:
-      'CA-backed private verification system. Chartered Accountants review registration, financials, compliance docs. Issue signed certificates with UDIN numbers. Every verification is audit-logged and tamper-evident.',
-    image:
-      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop&q=80',
+      'CA-led verification with UDIN-signed certificates and tamper-evident logs creates a dependable trust baseline.',
+    outcome:
+      'Organizations are matched based on verified trust signals, not assumptions.',
   },
   {
     id: 'milestone-governance',
@@ -151,13 +101,14 @@ const aboutData = [
         <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
       </svg>
     ),
-    title: 'No Standard Project Execution Process',
+    title: 'Execution Without Governance',
+    metric: 'Projects run on unstructured coordination',
     problemText:
-      'CSR projects run on WhatsApp, email, and Excel chaos. No structured milestones. No evidence requirements. No approval workflows. Companies lose visibility after releasing funds.',
+      'CSR execution often happens across WhatsApp, email, and spreadsheets with no milestone gates or evidence standards.',
     solutionText:
-      'Milestone-governed execution contracts. Define budget, phases, evidence requirements upfront. NGOs submit GPS-tagged proof. Companies approve inside platform. Every action logged with cryptographic hashes.',
-    image:
-      'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=200&fit=crop&q=80',
+      'Milestone contracts enforce evidence-first approvals, GPS-backed proof submission, and cryptographic action tracking.',
+    outcome:
+      'Fund release and execution are tied to proof, approvals, and traceability.',
   },
   {
     id: 'field-evidence',
@@ -172,13 +123,14 @@ const aboutData = [
         <polyline points="9 22 9 12 15 12 15 22" />
       </svg>
     ),
-    title: '80% Rural NGOs Digitally Excluded',
+    title: 'Field Teams Locked Out by Connectivity',
+    metric: '80% rural NGOs face digital exclusion',
     problemText:
-      '2M+ rural NGOs cannot access CSR opportunities. They lack internet reliability, English literacy, and tech infrastructure. Existing platforms serve only urban, well-connected organizations.',
+      'Many rural NGOs cannot reliably participate due to weak internet, language barriers, and low digital infrastructure.',
     solutionText:
-      'Offline-first mobile app with GPS evidence capture. Works without internet. Local language support. Field staff record beneficiary data, photos, geo-location. Auto-syncs when network available. Immutable audit trail.',
-    image:
-      'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=200&fit=crop&q=80',
+      'An offline-first field app with local-language support captures GPS evidence and syncs automatically when connectivity returns.',
+    outcome:
+      'Grassroots execution teams can operate first and sync later without losing accountability.',
   },
   {
     id: 'audit-compliance',
@@ -195,12 +147,13 @@ const aboutData = [
         <line x1="16" y1="17" x2="8" y2="17" />
       </svg>
     ),
-    title: '72% SMEs Unable to Maintain Audit Trails',
-    problemText: `${formatNumber(40000)}+ SMEs struggle with CSR compliance documentation. No structured audit logs. Manual document management. Cannot prove fund utilization. Risk penalties and trapped ${formatCurrency(5000)}+ Crore.`,
+    title: 'Compliance Documentation Breakdown',
+    metric: '72% SMEs struggle with audit readiness',
+    problemText: `${formatNumber(40000)}+ SMEs face manual compliance workflows and weak audit logs, putting ${formatCurrency(5000)}+ Crore at reporting risk.`,
     solutionText:
-      'Append-only audit ledger with blockchain anchoring. Every action hashed and logged. CA verifications, milestone approvals, payment confirmations cryptographically recorded. Court-defensible, tamper-proof compliance trail.',
-    image:
-      'https://images.unsplash.com/photo-1664575602276-acd073f104c1?w=400&h=200&fit=crop&q=80',
+      'An append-only, hash-linked audit ledger with blockchain anchoring provides a court-defensible compliance trail.',
+    outcome:
+      'Documentation becomes continuous and defensible instead of last-minute manual assembly.',
   },
   {
     id: 'ai-orchestration',
@@ -216,13 +169,14 @@ const aboutData = [
         <path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    title: '80% CSR Budgets Rushed in Q4',
+    title: 'Late-Stage CSR Planning Pressure',
+    metric: '80% budgets concentrated in Q4',
     problemText:
-      'Companies dump 80% of CSR in March quarter-end. Poor partner selection. Zero impact measurement. No time for proper planning, vetting, or execution. Compliance-only mindset prevails.',
+      'When most budgets move in Q4, teams rush partner selection and program planning, reducing outcome quality.',
     solutionText:
-      'AI CSR co-pilot generates campaign concepts from budget, cause, region inputs. Auto-matches verified NGOs. Creates proposals, contracts, compliance docs, impact reports. Turns planning from months to minutes.',
-    image:
-      'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=200&fit=crop&q=80',
+      'AI co-pilot workflows generate campaigns, match verified NGOs, and draft compliance artifacts in minutes.',
+    outcome:
+      'Teams can launch quality campaigns faster without sacrificing controls.',
   },
   {
     id: 'unified-platform',
@@ -239,13 +193,14 @@ const aboutData = [
         <rect x="3" y="14" width="7" height="7" />
       </svg>
     ),
-    title: '70% Rely on Fragmented Tools',
+    title: 'Tool Fragmentation Across Operations',
+    metric: '70% workflows spread across disconnected tools',
     problemText:
-      'NGOs juggle 5-10 different tools for operations. Excel for projects, WhatsApp for coordination, Google Forms for volunteers, separate payment tracking. Data silos, duplication, no single source of truth.',
+      'Teams juggle multiple disconnected tools, creating silos, duplicate work, and conflicting records.',
     solutionText:
-      'Unified operating system for social impact. Projects, campaigns, volunteers, marketplace, compliance, analytics—all in one platform. Governed execution tied to verified identities and audit trails. Network effects lock in ecosystem.',
-    image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&q=80',
+      'A unified operating platform centralizes projects, volunteers, compliance, and analytics under one verified workflow.',
+    outcome:
+      'Teams work from one shared system instead of stitching together parallel records.',
   },
 ] as const;
 
@@ -281,16 +236,17 @@ export default function About({ className, ...props }: AboutProps) {
           </p>
         </motion.div>
 
-        <div className="about-grid" role="list">
+        <div className="problem-studio" role="list">
           {aboutData.map((card, index) => (
-            <ProblemSolutionCard
+            <ProblemRow
               key={card.id}
               icon={card.icon}
               title={card.title}
+              metric={card.metric}
               problemText={card.problemText}
               solutionText={card.solutionText}
+              outcome={card.outcome}
               index={index}
-              image={card.image}
             />
           ))}
         </div>
