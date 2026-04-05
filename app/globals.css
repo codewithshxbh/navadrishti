@@ -723,6 +723,9 @@ h6 {
   padding: var(--spacing-md);
   box-shadow: 0 8px 24px rgba(17, 24, 39, 0.07);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
 }
 
 .problem-row::before {
@@ -764,6 +767,8 @@ h6 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
+  flex: 1;
+  align-content: start;
 }
 
 .problem-label,
@@ -791,7 +796,7 @@ h6 {
 }
 
 .problem-outcome {
-  margin-top: var(--spacing-sm);
+  margin-top: auto;
   padding-top: var(--spacing-sm);
   border-top: 1px dashed rgba(255, 140, 66, 0.35);
   display: flex;
@@ -2321,6 +2326,10 @@ h6 {
   .problem-row-body {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
+  }
+
+  .problem-row {
+    min-height: auto;
   }
 
   .problem-studio,
