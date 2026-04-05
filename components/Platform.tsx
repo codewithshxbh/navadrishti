@@ -6,7 +6,6 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const stakeholders = [
   {
     title: 'NGOs',
-    positioning: 'Execution partners on the ground',
     description:
       'Run verified, milestone-based projects with evidence capture and streamlined operations.',
     points: [
@@ -30,7 +29,6 @@ const stakeholders = [
   },
   {
     title: 'Companies',
-    positioning: 'Program owners and decision makers',
     description:
       'Design campaigns faster, approve milestones confidently, and maintain compliance-ready audit visibility.',
     points: [
@@ -52,7 +50,6 @@ const stakeholders = [
   },
   {
     title: 'Individuals',
-    positioning: 'Volunteers and social contributors',
     description:
       'Find trusted opportunities quickly and track impact with transparent, field-backed outcomes.',
     points: [
@@ -119,9 +116,6 @@ export default function Platform() {
                 <div className="stakeholder-icon">{stakeholder.icon}</div>
                 <div>
                   <h3>{stakeholder.title}</h3>
-                  <p className="stakeholder-positioning">
-                    {stakeholder.positioning}
-                  </p>
                 </div>
               </header>
 
