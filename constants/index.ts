@@ -29,11 +29,13 @@ export const MEDIA_QUERIES = {
 
 // Company information
 export const COMPANY = {
-  NAME: 'Navadrishti',
-  TAGLINE: 'Social Impact Operations Platform',
-  DESCRIPTION: 'AI-powered social impact operations platform for NGOs, CSR teams, and individuals',
+  NAME: 'Navadrishti LLP',
+  LEGAL_NAME: 'Navadrishti LLP',
+  TAGLINE: 'Consultation & Technology',
+  DESCRIPTION:
+    'Consultations and technology for social impact — NGOs, CSR teams, and individuals',
   FOUNDED: 2024,
-  WEBSITE: 'https://navadrishti.com',
+  WEBSITE: 'https://navadrishti.in',
 } as const;
 
 // Social media links

@@ -13,11 +13,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://navadrishti.in'),
   title: {
-    template: '%s | Navadrishti',
-    default: 'Navadrishti | Social Impact Operations Platform',
+    template: '%s | Navadrishti LLP',
+    default: 'Navadrishti LLP | Consultation & Technology',
   },
   description:
-    'AI-powered social impact operations platform connecting NGOs, CSR teams, and individuals. Transparent tracking, blockchain audits, and measurable impact for ₹50,000+ Crore CSR ecosystem.',
+    'Navadrishti LLP — consultations and technology for social impact. Connecting NGOs, CSR teams, and individuals with transparent tracking, audit trails, and measurable outcomes.',
   keywords: [
     'CSR platform',
     'NGO management',
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
       url: 'https://www.linkedin.com/in/vidhan-ai/',
     },
   ],
-  creator: 'Navadrishti Team',
-  publisher: 'Navadrishti',
+  creator: 'Navadrishti LLP',
+  publisher: 'Navadrishti LLP',
   formatDetection: {
     email: false,
     address: false,
@@ -52,24 +52,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: 'https://navadrishti.in',
-    title: 'Navadrishti | Operating System for Social Impact in India',
+    title: 'Navadrishti LLP | Consultation & Technology',
     description:
-      "AI-powered platform solving critical gaps in India's ₹50,000+ Crore CSR ecosystem with transparent tracking and measurable impact.",
-    siteName: 'Navadrishti',
+      'Consultations and technology for social impact — helping NGOs, CSR teams, and individuals with trust, governance, and measurable outcomes.',
+    siteName: 'Navadrishti LLP',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Navadrishti - Operating System for Social Impact in India',
+        alt: 'Navadrishti LLP — Consultation & Technology',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Navadrishti | Operating System for Social Impact in India',
+    title: 'Navadrishti LLP | Consultation & Technology',
     description:
-      "AI-powered platform solving critical gaps in India's ₹50,000+ Crore CSR ecosystem.",
+      'Consultations and technology for social impact — trust, governance, and measurable outcomes.',
     images: ['/og-image.jpg'],
     creator: '@navadrishti',
   },
@@ -135,10 +135,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Navadrishti',
-              description: 'AI-powered social impact operations platform',
-              url: 'https://navadrishti.com',
-              logo: 'https://navadrishti.com/small-logo.svg',
+              name: 'Navadrishti LLP',
+              legalName: 'Navadrishti LLP',
+              description:
+                'Consultations and technology for social impact — NGOs, CSR teams, and individuals.',
+              url: 'https://navadrishti.in',
+              logo: 'https://navadrishti.in/small-logo.svg',
               sameAs: [
                 'https://www.linkedin.com/company/navadrishti',
                 // Add other social media URLs
