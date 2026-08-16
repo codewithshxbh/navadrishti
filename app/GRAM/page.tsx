@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { HeroPhotoGrid } from '@/components/Hero';
 import { GramBrand } from '@/components/Platform';
+import ScrollToTop from '@/components/ScrollToTop';
 import {
   PLATFORM_APP_URL,
   PRODUCT_ARCHITECTURE,
@@ -288,6 +289,7 @@ export default function NavadrishtiPlatformPage() {
           </div>
         </section>
       </main>
+      <ScrollToTop />
     </div>
   );
 }
