@@ -28,9 +28,6 @@
       "@/*": ["./*"],
       "@/components/*": ["./components/*"],
       "@/app/*": ["./app/*"],
-      "@/assets/*": ["./assets/*"],
-      "@/types/*": ["./types/*"],
-      "@/utils/*": ["./utils/*"],
       "@/hooks/*": ["./hooks/*"],
       "@/constants/*": ["./constants/*"]
     }

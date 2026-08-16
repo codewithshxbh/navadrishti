@@ -17,19 +17,39 @@ export default function Navigation() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Handle scroll to detect when past hero section
+  // Match hero nav colors on dark sections (hero + products)
   useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.querySelector('.hero') as HTMLElement;
-      if (heroSection) {
-        const heroHeight = heroSection.offsetHeight;
-        setScrolled(window.scrollY > heroHeight * 0.5);
-      }
+    const isDarkUnderNav = () => {
+      const sampleY = 48;
+      const overlaps = (el: Element | null) => {
+        if (!el) return false;
+        const rect = el.getBoundingClientRect();
+        return rect.top <= sampleY && rect.bottom >= sampleY;
+      };
+
+      const hero = document.querySelector('.hero');
+      const products = document.querySelector('#products');
+      const why = document.querySelector('#why-navadrishti');
+      const footer = document.querySelector('.footer');
+      return (
+        overlaps(hero) ||
+        overlaps(products) ||
+        overlaps(why) ||
+        overlaps(footer)
+      );
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial state
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      setScrolled(!isDarkUnderNav());
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   // Close menu on escape key
@@ -155,31 +175,34 @@ export default function Navigation() {
             </li>
             <li>
               <a
-                href="#platform"
-                onClick={(e) => scrollToSection(e, '#platform')}
+                href="#products"
+                onClick={(e) => scrollToSection(e, '#products')}
               >
-                Platform
+                Products
               </a>
             </li>
             <li>
               <a
-                href="#features"
-                onClick={(e) => scrollToSection(e, '#features')}
+                href="#services"
+                onClick={(e) => scrollToSection(e, '#services')}
               >
-                Features
+                Services
               </a>
             </li>
             <li>
               <a
-                href="#video-testimonials"
-                onClick={(e) => scrollToSection(e, '#video-testimonials')}
+                href="#why-navadrishti"
+                onClick={(e) => scrollToSection(e, '#why-navadrishti')}
               >
-                Why We Do This
+                Why Navadrishti
               </a>
             </li>
             <li>
-              <a href="#faq" onClick={(e) => scrollToSection(e, '#faq')}>
-                FAQ
+              <a
+                href="#work-with"
+                onClick={(e) => scrollToSection(e, '#work-with')}
+              >
+                Work With Us
               </a>
             </li>
           </ul>

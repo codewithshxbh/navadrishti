@@ -4,9 +4,9 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Platform from '@/components/Platform';
-import Features from '@/components/Features';
-import VideoTestimonials from '@/components/VideoTestimonials';
-import FAQ from '@/components/FAQ';
+import Services from '@/components/Services';
+import WhyNavadrishti from '@/components/WhyNavadrishti';
+import WorkWith from '@/components/WorkWith';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
 import PremiumEffects from '@/components/PremiumEffects';
@@ -21,9 +21,9 @@ export default function Home() {
       <Hero />
       <About />
       <Platform />
-      <Features />
-      <VideoTestimonials />
-      <FAQ />
+      <Services />
+      <WhyNavadrishti />
+      <WorkWith />
       <Footer />
       <ScrollToTop />
     </>

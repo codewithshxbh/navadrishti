@@ -26,6 +26,35 @@ export default function PremiumEffects() {
 
     document.addEventListener('keydown', handleKeydown);
 
+    const isFormField = (target: EventTarget | null) => {
+      if (!(target instanceof HTMLElement)) return false;
+      const tag = target.tagName;
+      return (
+        tag === 'INPUT' ||
+        tag === 'TEXTAREA' ||
+        tag === 'SELECT' ||
+        target.isContentEditable
+      );
+    };
+
+    const preventSelect = (e: Event) => {
+      if (isFormField(e.target)) return;
+      e.preventDefault();
+    };
+
+    const preventDrag = (e: DragEvent) => {
+      const target = e.target;
+      if (
+        target instanceof HTMLImageElement ||
+        target instanceof HTMLVideoElement
+      ) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('selectstart', preventSelect);
+    document.addEventListener('dragstart', preventDrag);
+
     // Viewport Height Fix for Mobile
     const setVH = () => {
       const vh = window.innerHeight * 0.01;
@@ -55,6 +84,8 @@ export default function PremiumEffects() {
 
     return () => {
       document.removeEventListener('keydown', handleKeydown);
+      document.removeEventListener('selectstart', preventSelect);
+      document.removeEventListener('dragstart', preventDrag);
       window.removeEventListener('resize', setVH);
     };
   }, []);

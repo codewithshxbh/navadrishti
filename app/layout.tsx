@@ -142,7 +142,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
               url: 'https://navadrishti.in',
               logo: 'https://navadrishti.in/small-logo.svg',
               sameAs: [
-                'https://www.linkedin.com/company/navadrishti',
+                'https://www.linkedin.com/company/navadrishti/',
+                'https://www.instagram.com/navadrishti.in/',
                 // Add other social media URLs
               ],
               founder: [
