@@ -919,10 +919,13 @@ h6 {
 
   .about-doc-row {
     justify-content: flex-start;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .about-doc-btn {
-    align-self: flex-start;
+    width: 100%;
+    align-self: stretch;
   }
 
   .about-video-box {

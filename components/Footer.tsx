@@ -18,7 +18,7 @@ export default function Footer() {
 
           <div className="footer-links">
             <div className="footer-col">
-              <h3>Contact</h3>
+              <h3>Links</h3>
               <ul>
                 <li>
                   <a
@@ -26,7 +26,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    navadrishti.in
+                    Portfolio
                   </a>
                 </li>
                 <li>
@@ -35,7 +35,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Platform
+                    Product 1
                   </a>
                 </li>
               </ul>
