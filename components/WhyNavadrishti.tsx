@@ -17,7 +17,7 @@ const principles = [
   {
     title: 'Technology with Purpose',
     description:
-      'We use technology where it creates genuine value—improving coordination, accessibility, efficiency, transparency, and measurable outcomes.',
+      'We use technology where it creates genuine value, improving coordination, accessibility, efficiency, transparency, and measurable outcomes.',
   },
   {
     title: 'Built to Evolve',

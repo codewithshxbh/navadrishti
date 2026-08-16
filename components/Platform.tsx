@@ -8,6 +8,7 @@ import {
   PLATFORM_FEATURES,
   PLATFORM_FUTURE_DOMAINS,
   PLATFORM_LEAD,
+  PLATFORM_LOGO,
   PLATFORM_NAME,
   PLATFORM_PHASE_ONE,
   PLATFORM_PHASE_TWO,
@@ -15,6 +16,29 @@ import {
   PLATFORM_STATUS,
   PLATFORM_TECH_DIRECTION,
 } from '@/constants';
+
+type GramBrandProps = {
+  className?: string;
+};
+
+export function GramBrand({ className = '' }: GramBrandProps) {
+  const preventDrag = (e: React.DragEvent) => {
+    e.preventDefault();
+  };
+
+  return (
+    <span className={`gram-brand ${className}`.trim()}>
+      <img
+        src={PLATFORM_LOGO}
+        alt=""
+        className="gram-brand-logo"
+        draggable={false}
+        onDragStart={preventDrag}
+      />
+      <span className="gram-brand-name">{PLATFORM_NAME}</span>
+    </span>
+  );
+}
 
 const upcomingSlots = [1, 2, 3] as const;
 
@@ -58,7 +82,9 @@ export default function Platform() {
             transition={{ duration: 0.5 }}
           >
             <div className="product-card-top">
-              <h3>{PLATFORM_NAME}</h3>
+              <h3>
+                <GramBrand />
+              </h3>
               <p className="product-status">{PLATFORM_STATUS}</p>
             </div>
 

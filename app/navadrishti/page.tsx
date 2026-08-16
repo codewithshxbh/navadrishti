@@ -1,28 +1,30 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import HeroPhotoGrid from '@/components/HeroPhotoGrid';
+import { HeroPhotoGrid } from '@/components/Hero';
+import { GramBrand } from '@/components/Platform';
 import {
   PLATFORM_APP_URL,
-  PLATFORM_FEATURES,
-  PLATFORM_FUTURE_DOMAINS,
-  PLATFORM_LEAD,
-  PLATFORM_NAME,
-  PLATFORM_PHASE_ONE,
-  PLATFORM_PHASE_TWO,
-  PLATFORM_STAKEHOLDERS,
-  PLATFORM_STATUS,
-  PLATFORM_TECH_DIRECTION,
-  PLATFORM_WHO_FOR,
+  PRODUCT_ARCHITECTURE,
+  PRODUCT_CTA,
+  PRODUCT_EVIDENCE,
+  PRODUCT_HERO,
+  PRODUCT_HOW_IT_WORKS,
+  PRODUCT_OFFLINE,
+  PRODUCT_PAGE_META,
+  PRODUCT_PHASES,
+  PRODUCT_PLATFORM,
+  PRODUCT_PROBLEM,
+  PRODUCT_STAKEHOLDERS,
 } from '@/constants';
 
 export const metadata: Metadata = {
   title: {
     absolute: 'Navadrishti LLP | Consultation & Technology',
   },
-  description: PLATFORM_LEAD,
+  description: PRODUCT_PAGE_META,
   openGraph: {
     title: 'Navadrishti LLP | Consultation & Technology',
-    description: PLATFORM_LEAD,
+    description: PRODUCT_PAGE_META,
     url: 'https://navadrishti.in/navadrishti',
   },
 };
@@ -42,22 +44,73 @@ export default function NavadrishtiPlatformPage() {
         <section className="platform-page-hero">
           <HeroPhotoGrid />
           <div className="container platform-page-hero-content">
-            <p className="platform-page-eyebrow">{PLATFORM_STATUS}</p>
-            <h1>{PLATFORM_NAME}</h1>
-            <p className="platform-page-lead">{PLATFORM_LEAD}</p>
-            <ul className="product-stakeholders platform-page-tags">
-              {PLATFORM_STAKEHOLDERS.map((stakeholder) => (
-                <li key={stakeholder}>{stakeholder}</li>
+            <p className="platform-page-brand-mark">
+              <GramBrand />
+            </p>
+            <h1>{PRODUCT_HERO.headline}</h1>
+            <p className="platform-page-lead">{PRODUCT_HERO.lead}</p>
+            <div className="product-actions platform-page-hero-actions">
+              <a
+                className="product-action product-action--secondary"
+                href={PRODUCT_HERO.primaryCta.href}
+              >
+                {PRODUCT_HERO.primaryCta.label}
+              </a>
+              <a
+                className="product-action product-action--primary"
+                href={PRODUCT_HERO.secondaryCta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {PRODUCT_HERO.secondaryCta.label}
+              </a>
+            </div>
+            <p className="platform-page-support">{PRODUCT_HERO.supportLine}</p>
+          </div>
+        </section>
+
+        <section className="platform-page-section" id="problem">
+          <div className="container">
+            <h2>{PRODUCT_PROBLEM.title}</h2>
+            {PRODUCT_PROBLEM.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)} className="platform-page-copy">
+                {paragraph}
+              </p>
+            ))}
+            <ul
+              className="platform-page-chain"
+              aria-label="Impact lifecycle gaps"
+            >
+              {PRODUCT_PROBLEM.chain.map((item) => (
+                <li key={item}>{item}</li>
               ))}
             </ul>
+            <p className="platform-page-closing platform-page-closing--accent">
+              {PRODUCT_PROBLEM.closing}
+            </p>
+          </div>
+        </section>
+
+        <section className="platform-page-section platform-page-section--muted">
+          <div className="container">
+            <h2>{PRODUCT_PLATFORM.title}</h2>
+            <p className="platform-page-copy">{PRODUCT_PLATFORM.lead}</p>
+            <div className="platform-page-pillars">
+              {PRODUCT_PLATFORM.pillars.map((pillar) => (
+                <article key={pillar.title} className="platform-page-pillar">
+                  <h3>{pillar.title}</h3>
+                  <p>{pillar.description}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="platform-page-section">
           <div className="container">
-            <h2>Who it is for</h2>
+            <h2>{PRODUCT_STAKEHOLDERS.title}</h2>
             <div className="platform-page-grid">
-              {PLATFORM_WHO_FOR.map((item) => (
+              {PRODUCT_STAKEHOLDERS.items.map((item) => (
                 <article key={item.title} className="platform-page-card">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
@@ -67,33 +120,143 @@ export default function NavadrishtiPlatformPage() {
           </div>
         </section>
 
-        <section className="platform-page-section platform-page-section--muted">
+        <section
+          className="platform-page-section platform-page-section--muted"
+          id="how-it-works"
+        >
           <div className="container">
-            <h2>Special Features</h2>
-            <ul className="platform-page-list">
-              {PLATFORM_FEATURES.map((item) => (
-                <li key={item}>{item}</li>
+            <h2>{PRODUCT_HOW_IT_WORKS.title}</h2>
+            <ol className="platform-page-steps">
+              {PRODUCT_HOW_IT_WORKS.steps.map((step) => (
+                <li key={step.number} className="platform-page-step">
+                  <span className="platform-page-step-number">
+                    {step.number}
+                  </span>
+                  <div>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </li>
               ))}
-            </ul>
+            </ol>
           </div>
         </section>
 
-        <section className="platform-page-section">
+        <section className="platform-page-section" id="evidence">
           <div className="container">
-            <h2>Product roadmap</h2>
+            <p className="platform-page-section-eyebrow">
+              {PRODUCT_EVIDENCE.eyebrow}
+            </p>
+            <h2>{PRODUCT_EVIDENCE.title}</h2>
+            <p className="platform-page-closing platform-page-closing--accent">
+              {PRODUCT_EVIDENCE.lead}
+            </p>
+            <h3 className="platform-page-subhead">
+              {PRODUCT_EVIDENCE.heading}
+            </h3>
+            <p className="platform-page-copy">{PRODUCT_EVIDENCE.description}</p>
+            <ul
+              className="platform-page-context"
+              aria-label="Evidence context fields"
+            >
+              {PRODUCT_EVIDENCE.contextFields.map((field) => (
+                <li key={field}>{field}</li>
+              ))}
+            </ul>
+            <h3 className="platform-page-subhead">Evidence pipeline</h3>
+            <ol className="platform-page-pipeline">
+              {PRODUCT_EVIDENCE.pipeline.map((item, index) => (
+                <li key={item}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  {item}
+                </li>
+              ))}
+            </ol>
+            <p className="platform-page-note">
+              {PRODUCT_EVIDENCE.integrityNote}
+            </p>
+          </div>
+        </section>
+
+        <section
+          className="platform-page-section platform-page-section--muted"
+          id="offline"
+        >
+          <div className="container">
+            <p className="platform-page-section-eyebrow">
+              {PRODUCT_OFFLINE.eyebrow}
+            </p>
+            <h2>{PRODUCT_OFFLINE.title}</h2>
+            <p className="platform-page-copy">{PRODUCT_OFFLINE.lead}</p>
+            <ol className="platform-page-pipeline">
+              {PRODUCT_OFFLINE.steps.map((item, index) => (
+                <li key={item}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  {item}
+                </li>
+              ))}
+            </ol>
+            <p className="platform-page-note">{PRODUCT_OFFLINE.note}</p>
+          </div>
+        </section>
+
+        <section className="platform-page-section" id="architecture">
+          <div className="container">
+            <h2>{PRODUCT_ARCHITECTURE.title}</h2>
+            <p className="platform-page-subtitle">
+              {PRODUCT_ARCHITECTURE.subtitle}
+            </p>
+            <p className="platform-page-copy">{PRODUCT_ARCHITECTURE.lead}</p>
+
+            <div className="arch-layers">
+              {PRODUCT_ARCHITECTURE.layers.map((layer) => (
+                <article key={layer.number} className="arch-layer">
+                  <span className="arch-layer-number">{layer.number}</span>
+                  <div>
+                    <h3>{layer.title}</h3>
+                    <p>{layer.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <h3 className="platform-page-subhead">
+              {PRODUCT_ARCHITECTURE.flowTitle}
+            </h3>
+            <ol className="arch-flow">
+              {PRODUCT_ARCHITECTURE.flow.map((step) => (
+                <li key={step.title}>
+                  <strong>{step.title}</strong>
+                  <span>{step.detail}</span>
+                </li>
+              ))}
+            </ol>
+
+            <p className="platform-page-closing">
+              {PRODUCT_ARCHITECTURE.principle}
+            </p>
+          </div>
+        </section>
+
+        <section
+          className="platform-page-section platform-page-section--muted"
+          id="roadmap"
+        >
+          <div className="container">
+            <h2>{PRODUCT_PHASES.title}</h2>
             <div className="platform-page-phases">
               <article className="platform-page-card">
-                <h3>Phase 1 — Currently Deployed</h3>
+                <h3>{PRODUCT_PHASES.phaseOne.title}</h3>
                 <ul className="platform-page-list">
-                  {PLATFORM_PHASE_ONE.map((item) => (
+                  {PRODUCT_PHASES.phaseOne.items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
               </article>
               <article className="platform-page-card">
-                <h3>Phase 2 — Platform Expansion</h3>
+                <h3>{PRODUCT_PHASES.phaseTwo.title}</h3>
                 <ul className="platform-page-list">
-                  {PLATFORM_PHASE_TWO.map((item) => (
+                  {PRODUCT_PHASES.phaseTwo.items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
@@ -102,26 +265,10 @@ export default function NavadrishtiPlatformPage() {
           </div>
         </section>
 
-        <section className="platform-page-section platform-page-section--muted">
-          <div className="container">
-            <h2>Technology direction</h2>
-            <p className="platform-page-copy">{PLATFORM_TECH_DIRECTION}</p>
-            <p className="tech-domains-label">Future Product Domains</p>
-            <ul className="tech-domains platform-page-domains">
-              {PLATFORM_FUTURE_DOMAINS.map((domain) => (
-                <li key={domain}>{domain}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
         <section className="platform-page-cta">
           <div className="container">
-            <h2>Ready to explore the platform?</h2>
-            <p>
-              Open the live application or reach out to discuss how Navadrishti
-              can support your organisation.
-            </p>
+            <h2>{PRODUCT_CTA.title}</h2>
+            <p>{PRODUCT_CTA.lead}</p>
             <div className="product-actions">
               <a
                 className="product-action product-action--primary"
@@ -129,13 +276,13 @@ export default function NavadrishtiPlatformPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Visit Platform
+                {PRODUCT_CTA.primaryLabel}
               </a>
               <Link
                 className="product-action product-action--secondary"
                 href="/#products"
               >
-                Back to Products
+                {PRODUCT_CTA.secondaryLabel}
               </Link>
             </div>
           </div>

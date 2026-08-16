@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: 'Navadrishti LLP | Consultation & Technology',
   },
   description:
-    'Navadrishti LLP — consultations and technology for social impact. Connecting NGOs, CSR teams, and individuals with transparent tracking, audit trails, and measurable outcomes.',
+    'Navadrishti LLP: consultations and technology for social impact. Connecting NGOs, CSR teams, and individuals with transparent tracking, audit trails, and measurable outcomes.',
   keywords: [
     'CSR platform',
     'NGO management',
@@ -54,14 +54,14 @@ export const metadata: Metadata = {
     url: 'https://navadrishti.in',
     title: 'Navadrishti LLP | Consultation & Technology',
     description:
-      'Consultations and technology for social impact — helping NGOs, CSR teams, and individuals with trust, governance, and measurable outcomes.',
+      'Consultations and technology for social impact, helping NGOs, CSR teams, and individuals with trust, governance, and measurable outcomes.',
     siteName: 'Navadrishti LLP',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Navadrishti LLP — Consultation & Technology',
+        alt: 'Navadrishti LLP: Consultation & Technology',
       },
     ],
   },
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Navadrishti LLP | Consultation & Technology',
     description:
-      'Consultations and technology for social impact — trust, governance, and measurable outcomes.',
+      'Consultations and technology for social impact: trust, governance, and measurable outcomes.',
     images: ['/og-image.jpg'],
     creator: '@navadrishti',
   },
@@ -138,7 +138,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               name: 'Navadrishti LLP',
               legalName: 'Navadrishti LLP',
               description:
-                'Consultations and technology for social impact — NGOs, CSR teams, and individuals.',
+                'Consultations and technology for social impact for NGOs, CSR teams, and individuals.',
               url: 'https://navadrishti.in',
               logo: 'https://navadrishti.in/small-logo.svg',
               sameAs: [
