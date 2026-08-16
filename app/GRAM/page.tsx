@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Navadrishti LLP | Consultation & Technology',
     description: PRODUCT_PAGE_META,
-    url: 'https://navadrishti.in/navadrishti',
+    url: 'https://navadrishti.in/GRAM',
   },
 };
 

@@ -50,6 +50,8 @@ export const PLATFORM_FUTURE_DOMAINS = [
 
 export const PLATFORM_APP_URL = 'https://app.navadrishti.in';
 
+export const PLATFORM_PAGE_PATH = '/GRAM';
+
 export const PLATFORM_WHO_FOR = [
   {
     title: 'NGOs',

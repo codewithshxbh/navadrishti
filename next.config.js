@@ -122,6 +122,16 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
 
+  async redirects() {
+    return [
+      {
+        source: '/navadrishti',
+        destination: '/GRAM',
+        permanent: true,
+      },
+    ];
+  },
+
   // TypeScript configuration
   typescript: {
     ignoreBuildErrors: false,

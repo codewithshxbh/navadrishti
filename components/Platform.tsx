@@ -10,6 +10,7 @@ import {
   PLATFORM_LEAD,
   PLATFORM_LOGO,
   PLATFORM_NAME,
+  PLATFORM_PAGE_PATH,
   PLATFORM_PHASE_ONE,
   PLATFORM_PHASE_TWO,
   PLATFORM_STAKEHOLDERS,
@@ -135,7 +136,7 @@ export default function Platform() {
               </a>
               <Link
                 className="product-action product-action--secondary"
-                href="/navadrishti"
+                href={PLATFORM_PAGE_PATH}
               >
                 Know More
               </Link>
