@@ -2373,6 +2373,21 @@ h6 {
   line-height: 1.45;
 }
 
+.work-with-gram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.work-with-gram .gram-brand {
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.work-with-gram .gram-brand-logo {
+  height: 1.05em;
+}
+
 .work-with-cta {
   display: inline-flex;
   align-items: center;
@@ -2976,6 +2991,24 @@ h6 {
 }
 
 .footer-col a:hover {
+  color: #ff8c42;
+}
+
+.footer-gram-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-gram-link .gram-brand {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.footer-gram-link .gram-brand-logo {
+  height: 1.05em;
+}
+
+.footer-gram-link:hover .gram-brand {
   color: #ff8c42;
 }
 

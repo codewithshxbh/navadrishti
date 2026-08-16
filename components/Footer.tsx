@@ -1,5 +1,8 @@
 'use client';
 
+import { GramBrand } from '@/components/Platform';
+import { PLATFORM_APP_URL } from '@/constants';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -31,11 +34,13 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://app.navadrishti.in"
+                    className="footer-gram-link"
+                    href={PLATFORM_APP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="GRAM"
                   >
-                    Product 1
+                    <GramBrand />
                   </a>
                 </li>
               </ul>

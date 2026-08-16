@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { GramBrand } from '@/components/Platform';
 
 const audiences = [
   {
@@ -10,13 +11,15 @@ const audiences = [
     href: '#services',
     cta: 'View services',
     external: false,
+    gram: false,
   },
   {
     title: 'NGOs, Individuals & Companies',
-    description: 'Explore the Navadrishti platform',
+    description: 'Explore GRAM',
     href: 'https://app.navadrishti.in',
-    cta: 'Open platform',
+    cta: 'Open GRAM',
     external: true,
+    gram: true,
   },
   {
     title: 'Partners & Investors',
@@ -24,6 +27,7 @@ const audiences = [
     href: 'mailto:connect@navadrishti.in',
     cta: 'Get in touch',
     external: false,
+    gram: false,
   },
 ] as const;
 
@@ -76,7 +80,14 @@ export default function WorkWith() {
             >
               <div className="work-with-copy">
                 <h3>{audience.title}</h3>
-                <p>{audience.description}</p>
+                {audience.gram ? (
+                  <p className="work-with-gram">
+                    <span>Explore</span>
+                    <GramBrand />
+                  </p>
+                ) : (
+                  <p>{audience.description}</p>
+                )}
               </div>
               <span className="work-with-cta">
                 {audience.cta}
