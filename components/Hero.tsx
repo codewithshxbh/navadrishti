@@ -19,8 +19,8 @@ export default function Hero() {
             className="hero-subtitle"
             style={{ color: 'rgba(255, 255, 255, 0.9)' }}
           >
-            Building technology and practical solutions for a more connected,
-            efficient and impactful world.
+            Where technology, expertise and purpose come together to solve what
+            matters.
           </p>
           <div className="hero-cta">
             <a href="#products" className="btn-primary">
