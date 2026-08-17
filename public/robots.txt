@@ -1,60 +1,37 @@
-# Navadrishti.in - India's Social Impact OS
-# Optimized for Search Engines + ALL LLMs (GPTBot, ClaudeBot, PerplexityBot)
-# Deployed: Jan 27, 2026
+# Navadrishti.in - Navadrishti LLP | GRAM Social Impact Platform
 
-User-agent: *  
-Allow: /  
-Crawl-delay: 1  
+User-agent: *
+Allow: /
 
-# MAJOR SEARCH ENGINES
-User-agent: Googlebot  
-Allow: /  
-Sitemap: https://navadrishti.in/sitemap.xml  
+User-agent: Googlebot
+Allow: /
+Sitemap: https://www.navadrishti.in/sitemap.xml
 
-User-agent: Bingbot  
-Allow: /  
-Sitemap: https://navadrishti.in/sitemap.xml  
+User-agent: Bingbot
+Allow: /
+Sitemap: https://www.navadrishti.in/sitemap.xml
 
-User-agent: DuckDuckBot  
-Allow: /  
+User-agent: GPTBot
+Allow: /
 
-# LLM / AI CRAWLERS (Explicit Permissions)
-User-agent: GPTBot  
-Allow: /  
+User-agent: ChatGPT-User
+Allow: /
 
-User-agent: ClaudeBot  
-Allow: /  
+User-agent: ClaudeBot
+Allow: /
 
-User-agent: anthropic-ai  
-Allow: /  
+User-agent: PerplexityBot
+Allow: /
 
-User-agent: Google-Extended  
-Allow: /  
+User-agent: MJ12bot
+Disallow: /
 
-User-agent: PerplexityBot  
-Allow: /  
+User-agent: DotBot
+Disallow: /
 
-User-agent: Omgilibot  
-Allow: /  
+# LLM / AI discovery
+# https://www.navadrishti.in/llms.txt
+# https://www.navadrishti.in/llms-full.txt
+# https://www.navadrishti.in/ai.txt
 
-User-agent: Amazonbot  
-Allow: /  
-
-User-agent: Bytespider  
-Allow: /  
-
-# BLOCK Resource Hogs / Competitors
-User-agent: AhrefsBot  
-Crawl-delay: 30  
-
-User-agent: SemrushBot  
-Crawl-delay: 20  
-
-User-agent: MJ12bot  
-Disallow: /  
-
-User-agent: DotBot  
-Disallow: /  
-
-# CRITICAL SITEMAPS
-Sitemap: https://navadrishti.in/sitemap.xml
+Sitemap: https://www.navadrishti.in/sitemap.xml

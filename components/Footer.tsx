@@ -1,7 +1,12 @@
 'use client';
 
-import { GramBrand } from '@/components/Platform';
-import { PLATFORM_APP_URL } from '@/constants';
+import { GramBrand, NavadrishtiBrand } from '@/components/Platform';
+import {
+  PLATFORM_APP_URL,
+  PLATFORM_LOGO,
+  PLATFORM_PAGE_PATH,
+} from '@/constants';
+import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,23 +29,37 @@ export default function Footer() {
               <h3>Links</h3>
               <ul>
                 <li>
-                  <a
-                    href="https://navadrishti.in"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link href="/" className="footer-brand-link">
+                    <NavadrishtiBrand />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="footer-brand-link"
+                    href={PLATFORM_PAGE_PATH}
+                    aria-label="GRAM product page"
                   >
-                    Portfolio
-                  </a>
+                    <GramBrand />
+                  </Link>
                 </li>
                 <li>
                   <a
-                    className="footer-gram-link"
+                    className="footer-brand-link footer-open-app-link"
                     href={PLATFORM_APP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="GRAM"
                   >
-                    <GramBrand />
+                    <span className="footer-open-gram-app">
+                      Open
+                      <img
+                        src={PLATFORM_LOGO}
+                        alt=""
+                        className="gram-brand-logo"
+                        draggable={false}
+                        onDragStart={(e) => e.preventDefault()}
+                      />
+                      GRAM App
+                    </span>
                   </a>
                 </li>
               </ul>

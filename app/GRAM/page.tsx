@@ -4,14 +4,22 @@ import { HeroPhotoGrid } from '@/components/Hero';
 import { GramBrand } from '@/components/Platform';
 import ScrollToTop from '@/components/ScrollToTop';
 import {
+  APP_URL,
+  GRAM_BRAND_LINE,
+  GRAM_PAGE_URL,
   PLATFORM_APP_URL,
+  SEO_GRAM_DESCRIPTION,
+  SEO_GRAM_TITLE,
+  SITE_NAME,
+  SITE_URL,
+} from '@/constants';
+import {
   PRODUCT_ARCHITECTURE,
   PRODUCT_CTA,
   PRODUCT_EVIDENCE,
   PRODUCT_HERO,
   PRODUCT_HOW_IT_WORKS,
   PRODUCT_OFFLINE,
-  PRODUCT_PAGE_META,
   PRODUCT_PHASES,
   PRODUCT_PLATFORM,
   PRODUCT_PROBLEM,
@@ -20,19 +28,98 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Navadrishti LLP | Consultation & Technology',
+    absolute: SEO_GRAM_TITLE,
   },
-  description: PRODUCT_PAGE_META,
+  description: SEO_GRAM_DESCRIPTION,
+  keywords: [
+    'GRAM',
+    'Navadrishti GRAM',
+    'GRAM powered by Navadrishti LLP',
+    'app.navadrishti.in',
+    'CSR platform India',
+    'NGO platform India',
+    'CA verified NGO India',
+    'NGO directory India',
+    'social impact platform',
+    'field evidence',
+    'offline field capture',
+    'NGO verification',
+    'CSR collaboration',
+    'volunteer platform India',
+    'FCRA 12A 80G NGO',
+  ],
+  alternates: {
+    canonical: GRAM_PAGE_URL,
+  },
   openGraph: {
-    title: 'Navadrishti LLP | Consultation & Technology',
-    description: PRODUCT_PAGE_META,
-    url: 'https://navadrishti.in/GRAM',
+    title: SEO_GRAM_TITLE,
+    description: SEO_GRAM_DESCRIPTION,
+    url: GRAM_PAGE_URL,
+    type: 'website',
+    siteName: SITE_NAME,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  other: {
+    'primary-entity': SITE_NAME,
+    'primary-product': GRAM_BRAND_LINE,
+    'primary-url': SITE_URL,
+    'product-url': GRAM_PAGE_URL,
+    'app-url': APP_URL,
+    'llms-context': `${SITE_URL}/llms.txt`,
+    'llms-context-full': `${SITE_URL}/llms-full.txt`,
   },
 };
 
 export default function NavadrishtiPlatformPage() {
+  const gramStructuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: SITE_NAME,
+            item: SITE_URL,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'GRAM',
+            item: GRAM_PAGE_URL,
+          },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${GRAM_PAGE_URL}/#webpage`,
+        url: GRAM_PAGE_URL,
+        name: SEO_GRAM_TITLE,
+        description: SEO_GRAM_DESCRIPTION,
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        about: { '@id': `${SITE_URL}/#gram` },
+        significantLink: APP_URL,
+      },
+    ],
+  };
+
   return (
     <div className="platform-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(gramStructuredData) }}
+      />
       <header className="platform-page-nav">
         <div className="container platform-page-nav-inner">
           <Link href="/#products" className="platform-page-back">

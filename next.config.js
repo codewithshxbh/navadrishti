@@ -27,46 +27,12 @@ const nextConfig = {
   },
 
   // Bundle analyzer
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Bundle analyzer
+  webpack: (config, { dev, isServer }) => {
     if (process.env.ANALYZE === 'true') {
       const withBundleAnalyzer = require('@next/bundle-analyzer')({
         enabled: true,
       });
-      return withBundleAnalyzer.webpack(config, {
-        buildId,
-        dev,
-        isServer,
-        defaultLoaders,
-        webpack,
-      });
-    }
-
-    // Performance optimizations
-    if (!dev && !isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          default: false,
-          vendors: false,
-          // Vendor chunk
-          vendor: {
-            name: 'vendor',
-            chunks: 'all',
-            test: /node_modules/,
-            priority: 20,
-          },
-          // Common chunk
-          common: {
-            name: 'common',
-            minChunks: 2,
-            chunks: 'all',
-            priority: 10,
-            reuseExistingChunk: true,
-            enforce: true,
-          },
-        },
-      };
+      return withBundleAnalyzer.webpack(config, { dev, isServer });
     }
 
     return config;
@@ -79,6 +45,15 @@ const nextConfig = {
         source: '/(.*)',
         headers: [
           // Security headers
+          {
+            key: 'Link',
+            value:
+              '<https://www.navadrishti.in/llms.txt>; rel="alternate"; type="text/plain"; title="LLM context", <https://www.navadrishti.in/llms-full.txt>; rel="alternate"; type="text/plain"; title="LLM full context", <https://www.navadrishti.in/ai.txt>; rel="alternate"; type="text/plain"; title="AI discovery"',
+          },
+          {
+            key: 'X-AI-Discovery',
+            value: 'https://www.navadrishti.in/llms.txt',
+          },
           {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
@@ -124,6 +99,12 @@ const nextConfig = {
 
   async redirects() {
     return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'navadrishti.in' }],
+        destination: 'https://www.navadrishti.in/:path*',
+        permanent: true,
+      },
       {
         source: '/navadrishti',
         destination: '/GRAM',

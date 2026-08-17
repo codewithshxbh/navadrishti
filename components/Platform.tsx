@@ -18,15 +18,30 @@ import {
   PLATFORM_TECH_DIRECTION,
 } from '@/constants';
 
-type GramBrandProps = {
+type BrandProps = {
   className?: string;
 };
 
-export function GramBrand({ className = '' }: GramBrandProps) {
-  const preventDrag = (e: React.DragEvent) => {
-    e.preventDefault();
-  };
+const preventBrandDrag = (e: React.DragEvent) => {
+  e.preventDefault();
+};
 
+export function NavadrishtiBrand({ className = '' }: BrandProps) {
+  return (
+    <span className={`nav-brand ${className}`.trim()}>
+      <img
+        src="/small-logo.svg"
+        alt=""
+        className="nav-brand-logo"
+        draggable={false}
+        onDragStart={preventBrandDrag}
+      />
+      <span className="nav-brand-name">Navadrishti</span>
+    </span>
+  );
+}
+
+export function GramBrand({ className = '' }: BrandProps) {
   return (
     <span className={`gram-brand ${className}`.trim()}>
       <img
@@ -34,7 +49,7 @@ export function GramBrand({ className = '' }: GramBrandProps) {
         alt=""
         className="gram-brand-logo"
         draggable={false}
-        onDragStart={preventDrag}
+        onDragStart={preventBrandDrag}
       />
       <span className="gram-brand-name">{PLATFORM_NAME}</span>
     </span>

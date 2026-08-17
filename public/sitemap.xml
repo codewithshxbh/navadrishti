@@ -6,94 +6,80 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://navadrishti.in/</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
+  <loc>https://www.navadrishti.in/</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
   <changefreq>weekly</changefreq>
 </url>
 
 <url>
-  <loc>https://navadrishti.in/GRAM</loc>
-  <lastmod>2026-08-16T00:00:00+00:00</lastmod>
-  <priority>0.90</priority>
+  <loc>https://www.navadrishti.in/GRAM</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+  <priority>0.99</priority>
   <changefreq>weekly</changefreq>
 </url>
 
 <url>
-  <loc>https://navadrishti.in/#about</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
-  <priority>0.80</priority>
-  <changefreq>monthly</changefreq>
+  <loc>https://app.navadrishti.in</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+  <priority>0.98</priority>
+  <changefreq>weekly</changefreq>
 </url>
 
 <url>
-  <loc>https://navadrishti.in/#products</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
-  <priority>0.80</priority>
-  <changefreq>monthly</changefreq>
-</url>
-
-<url>
-  <loc>https://navadrishti.in/#features</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
-  <priority>0.80</priority>
-  <changefreq>monthly</changefreq>
-</url>
-
-<url>
-  <loc>https://navadrishti.in/#testimonials</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
+  <loc>https://www.navadrishti.in/llms.txt</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
-  <changefreq>monthly</changefreq>
+  <changefreq>weekly</changefreq>
 </url>
 
 <url>
-  <loc>https://navadrishti.in/#faq</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
+  <loc>https://www.navadrishti.in/llms-full.txt</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
-  <changefreq>monthly</changefreq>
+  <changefreq>weekly</changefreq>
 </url>
 
 <url>
-  <loc>https://navadrishti.in/#impact</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
+  <loc>https://www.navadrishti.in/ai.txt</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   <priority>0.70</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>https://www.navadrishti.in/marketing/csr-ngo-platform.html</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+  <priority>0.85</priority>
   <changefreq>monthly</changefreq>
 </url>
 
 <url>
-  <loc>https://navadrishti.in/marketing/csr-ngo-platform.html</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
-  <priority>0.90</priority>
-  <changefreq>weekly</changefreq>
+  <loc>https://www.navadrishti.in/marketing/ca-badge.html</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 
 <url>
-  <loc>https://navadrishti.in/marketing/ai-matching.html</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
-  <priority>0.90</priority>
-  <changefreq>weekly</changefreq>
+  <loc>https://www.navadrishti.in/marketing/monitoring.html</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 
 <url>
-  <loc>https://navadrishti.in/marketing/ca-badge.html</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
-  <priority>0.90</priority>
-  <changefreq>weekly</changefreq>
+  <loc>https://www.navadrishti.in/marketing/ai-matching.html</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 
 <url>
-  <loc>https://navadrishti.in/marketing/monitoring.html</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
-  <priority>0.90</priority>
-  <changefreq>weekly</changefreq>
-</url>
-
-<url>
-  <loc>https://navadrishti.in/marketing/compare.html</loc>
-  <lastmod>2026-01-27T05:30:19+00:00</lastmod>
-  <priority>0.90</priority>
-  <changefreq>weekly</changefreq>
+  <loc>https://www.navadrishti.in/marketing/compare.html</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 
 </urlset>

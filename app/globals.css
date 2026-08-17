@@ -1282,11 +1282,39 @@ h6 {
   letter-spacing: 0.06em;
   font-weight: 700;
   line-height: 1;
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  max-width: 100%;
   color: inherit;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-user-drag: none;
+}
+
+.nav-brand-logo {
+  display: block;
+  height: 1.2em;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.nav-brand-name {
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .product-status {
@@ -2994,6 +3022,46 @@ h6 {
   color: #ff8c42;
 }
 
+.footer-brand-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-brand-link .nav-brand,
+.footer-brand-link .gram-brand {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.footer-brand-link .nav-brand-logo,
+.footer-brand-link .gram-brand-logo {
+  height: 1.05em;
+}
+
+.footer-brand-link:hover .nav-brand,
+.footer-brand-link:hover .gram-brand,
+.footer-open-app-link:hover .footer-open-gram-app {
+  color: #ff8c42;
+}
+
+.footer-open-gram-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.4;
+}
+
+.footer-open-app-link .gram-brand-logo {
+  height: 1.05em;
+  width: auto;
+  flex-shrink: 0;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 .footer-gram-link {
   display: inline-flex;
   align-items: center;
@@ -3535,6 +3603,19 @@ h6 {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.agent-only {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Lazy Loading Image Effect */

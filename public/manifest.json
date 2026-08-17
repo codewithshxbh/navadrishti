@@ -1,8 +1,9 @@
 {
   "name": "Navadrishti LLP — Consultation & Technology",
   "short_name": "Navadrishti LLP",
-  "description": "Consultations and technology for social impact — NGOs, CSR teams, and individuals",
-  "start_url": "/",
+  "description": "Navadrishti LLP builds GRAM for social impact in India — CSR, NGO verification, field evidence and volunteering.",
+  "start_url": "https://www.navadrishti.in/",
+  "scope": "https://www.navadrishti.in/",
   "display": "standalone",
   "background_color": "#0a0a0f",
   "theme_color": "#ff8c42",
@@ -11,6 +12,13 @@
       "src": "/small-logo.svg",
       "sizes": "any",
       "type": "image/svg+xml"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://app.navadrishti.in",
+      "id": "gram-app"
     }
   ]
 }

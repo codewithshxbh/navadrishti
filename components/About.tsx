@@ -82,7 +82,7 @@ export default function About() {
             <div className="about-doc-row">
               <a
                 className="about-doc-btn about-doc-btn--logo"
-                href="/docs/dpiit-certificate.pdf"
+                href="/docs/DPIIT_NAVADRISHTI_LLP.pdf"
                 download="Navadrishti-LLP-DPIIT-Certificate.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
