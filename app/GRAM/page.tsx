@@ -13,6 +13,7 @@ import {
   PLATFORM_APP_URL,
   SEO_GRAM_DESCRIPTION,
   SEO_GRAM_TITLE,
+  SEO_HOME_TITLE,
   SEO_OG_IMAGE_ALT,
   SEO_OG_IMAGE_HEIGHT,
   SEO_OG_IMAGE_PATH,
@@ -35,7 +36,7 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    absolute: SEO_GRAM_TITLE,
+    absolute: SEO_HOME_TITLE,
   },
   description: SEO_GRAM_DESCRIPTION,
   keywords: [
