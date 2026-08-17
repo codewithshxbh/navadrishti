@@ -8,13 +8,8 @@ User-agent: Googlebot
 Allow: /
 Allow: /seo/
 
-User-agent: Googlebot
-Allow: /
-Sitemap: https://www.navadrishti.in/sitemap.xml
-
 User-agent: Bingbot
 Allow: /
-Sitemap: https://www.navadrishti.in/sitemap.xml
 
 User-agent: GPTBot
 Allow: /
@@ -53,5 +48,7 @@ Disallow: /
 # https://www.navadrishti.in/llms.txt
 # https://www.navadrishti.in/llms-full.txt
 # https://www.navadrishti.in/ai.txt
+# https://app.navadrishti.in/llm.txt
+# https://app.navadrishti.in/ai.txt
 
 Sitemap: https://www.navadrishti.in/sitemap.xml

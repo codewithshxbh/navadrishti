@@ -48,6 +48,20 @@
 </url>
 
 <url>
+  <loc>https://app.navadrishti.in/llm.txt</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>https://app.navadrishti.in/ai.txt</loc>
+  <lastmod>2026-08-17T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
   <loc>https://www.navadrishti.in/marketing/csr-ngo-platform.html</loc>
   <lastmod>2026-08-17T00:00:00+00:00</lastmod>
   <priority>0.85</priority>

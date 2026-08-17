@@ -48,7 +48,7 @@ const nextConfig = {
           {
             key: 'Link',
             value:
-              '<https://www.navadrishti.in/llms.txt>; rel="alternate"; type="text/plain"; title="LLM context", <https://www.navadrishti.in/llms-full.txt>; rel="alternate"; type="text/plain"; title="LLM full context", <https://www.navadrishti.in/ai.txt>; rel="alternate"; type="text/plain"; title="AI discovery"',
+              '<https://www.navadrishti.in/llms.txt>; rel="alternate"; type="text/plain"; title="LLM context", <https://www.navadrishti.in/llms-full.txt>; rel="alternate"; type="text/plain"; title="LLM full context", <https://www.navadrishti.in/ai.txt>; rel="alternate"; type="text/plain"; title="AI discovery", <https://app.navadrishti.in/llm.txt>; rel="alternate"; type="text/plain"; title="GRAM live app LLM context", <https://app.navadrishti.in/ai.txt>; rel="alternate"; type="text/plain"; title="GRAM live app AI discovery"',
           },
           {
             key: 'X-AI-Discovery',

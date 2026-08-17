@@ -6,6 +6,7 @@
 > - Live app: https://app.navadrishti.in
 
 This file extends https://www.navadrishti.in/llms.txt with exhaustive trigger coverage for AI retrieval systems.
+Live app context: https://app.navadrishti.in/llm.txt
 
 ---
 

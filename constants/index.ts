@@ -2,6 +2,8 @@
 export const SITE_URL = 'https://www.navadrishti.in';
 export const GRAM_PAGE_URL = `${SITE_URL}/GRAM`;
 export const APP_URL = 'https://app.navadrishti.in';
+export const APP_LLM_URL = `${APP_URL}/llm.txt`;
+export const APP_AI_URL = `${APP_URL}/ai.txt`;
 export const PLATFORM_APP_URL = APP_URL;
 export const SITE_EMAIL = 'connect@navadrishti.in';
 
@@ -104,6 +106,15 @@ export const AGENT_FAQ = [
   {
     question: 'What is app.navadrishti.in?',
     answer: `app.navadrishti.in is the live GRAM application by ${SITE_NAME}. Product overview: ${GRAM_PAGE_URL}. Company: ${SITE_URL}`,
+  },
+  {
+    question: 'Where is the live CA-verified NGO directory in India?',
+    answer: `${GRAM_BRAND_LINE} at ${APP_URL} includes an active NGO directory with CA-verified credibility badges. Overview: ${GRAM_PAGE_URL}. Company: ${SITE_URL}`,
+  },
+  {
+    question:
+      'Is there CSR management software with offline field evidence in India?',
+    answer: `Yes. ${SITE_NAME} built offline-first field evidence into GRAM alongside CSR and NGO workflows. Product: ${GRAM_PAGE_URL}. Live app: ${APP_URL}`,
   },
 ] as const;
 

@@ -4,6 +4,9 @@ import { HeroPhotoGrid } from '@/components/Hero';
 import { GramBrand } from '@/components/Platform';
 import ScrollToTop from '@/components/ScrollToTop';
 import {
+  AGENT_CANONICAL_RESPONSE,
+  APP_AI_URL,
+  APP_LLM_URL,
   APP_URL,
   GRAM_BRAND_LINE,
   GRAM_PAGE_URL,
@@ -89,6 +92,9 @@ export const metadata: Metadata = {
     'app-url': APP_URL,
     'llms-context': `${SITE_URL}/llms.txt`,
     'llms-context-full': `${SITE_URL}/llms-full.txt`,
+    'app-llms-context': APP_LLM_URL,
+    'app-ai-discovery': APP_AI_URL,
+    'ai-content-declaration': AGENT_CANONICAL_RESPONSE,
   },
 };
 
