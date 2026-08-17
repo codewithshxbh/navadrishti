@@ -17,6 +17,12 @@ export const SEO_GRAM_TITLE =
 export const SEO_GRAM_DESCRIPTION =
   'GRAM powered by Navadrishti LLP — live social impact platform for NGOs, CSR companies and volunteers in India. CA-verified NGOs, FCRA/12A/80G badges, donations, field evidence and CSR collaboration.';
 
+/** SEO/social preview only — not linked or shown anywhere on the public site UI. */
+export const SEO_OG_IMAGE_PATH = '/seo/og-preview.jpg';
+export const SEO_OG_IMAGE_ALT = 'Navadrishti LLP: Consultation & Technology';
+export const SEO_OG_IMAGE_WIDTH = 1200;
+export const SEO_OG_IMAGE_HEIGHT = 630;
+
 export const AGENT_PRIMARY = {
   company: SITE_NAME,
   product: 'GRAM',

@@ -10,6 +10,10 @@ import {
   PLATFORM_APP_URL,
   SEO_GRAM_DESCRIPTION,
   SEO_GRAM_TITLE,
+  SEO_OG_IMAGE_ALT,
+  SEO_OG_IMAGE_HEIGHT,
+  SEO_OG_IMAGE_PATH,
+  SEO_OG_IMAGE_WIDTH,
   SITE_NAME,
   SITE_URL,
 } from '@/constants';
@@ -57,6 +61,14 @@ export const metadata: Metadata = {
     url: GRAM_PAGE_URL,
     type: 'website',
     siteName: SITE_NAME,
+    images: [
+      {
+        url: SEO_OG_IMAGE_PATH,
+        width: SEO_OG_IMAGE_WIDTH,
+        height: SEO_OG_IMAGE_HEIGHT,
+        alt: SEO_OG_IMAGE_ALT,
+      },
+    ],
   },
   robots: {
     index: true,

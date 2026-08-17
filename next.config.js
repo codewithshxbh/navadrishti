@@ -80,6 +80,42 @@ const nextConfig = {
           },
         ],
       },
+      // SEO preview image: metadata/crawler use only — not indexed as site content
+      {
+        source: '/seo/:path*',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'image/jpeg',
+          },
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
+        ],
+      },
+      // Certificate PDFs: download only, never inline preview in browser
+      {
+        source: '/docs/:path*.pdf',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/pdf',
+          },
+          {
+            key: 'Content-Disposition',
+            value: 'attachment',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'private, no-store',
+          },
+        ],
+      },
       // Cache static assets aggressively
       {
         source: '/assets/:path*',

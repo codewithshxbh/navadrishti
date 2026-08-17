@@ -84,9 +84,8 @@ export default function About() {
                 className="about-doc-btn about-doc-btn--logo"
                 href="/docs/DPIIT_NAVADRISHTI_LLP.pdf"
                 download="Navadrishti-LLP-DPIIT-Certificate.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Download DPIIT Certificate"
+                type="application/pdf"
+                aria-label="Download DPIIT Certificate PDF"
               >
                 <img
                   src="/photos/dpiit.png"
@@ -101,9 +100,8 @@ export default function About() {
                 className="about-doc-btn about-doc-btn--logo"
                 href="/docs/startinup-certificate.pdf"
                 download="Navadrishti-LLP-StartinUP-Certificate.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Download StartinUP Certificate"
+                type="application/pdf"
+                aria-label="Download StartinUP Certificate PDF"
               >
                 <img
                   src="/photos/startinup.png"

@@ -2,6 +2,11 @@
 
 User-agent: *
 Allow: /
+Disallow: /seo/
+
+User-agent: Googlebot
+Allow: /
+Allow: /seo/
 
 User-agent: Googlebot
 Allow: /
@@ -22,6 +27,21 @@ Allow: /
 
 User-agent: PerplexityBot
 Allow: /
+
+User-agent: facebookexternalhit
+Allow: /seo/
+
+User-agent: Twitterbot
+Allow: /seo/
+
+User-agent: LinkedInBot
+Allow: /seo/
+
+User-agent: Slackbot
+Allow: /seo/
+
+User-agent: WhatsApp
+Allow: /seo/
 
 User-agent: MJ12bot
 Disallow: /
