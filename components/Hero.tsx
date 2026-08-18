@@ -1,5 +1,60 @@
 'use client';
 
+const NAV_OFFSET = 80;
+
+function easeInOutCubic(t: number): number {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+export function scrollToHash(
+  e: React.MouseEvent<HTMLAnchorElement>,
+  id: string
+) {
+  if (!id.startsWith('#')) return;
+
+  e.preventDefault();
+  const element = document.querySelector(id);
+  if (!element) return;
+
+  const targetPosition =
+    element.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  const duration = window.innerWidth <= 768 ? 400 : 1200;
+  let startTime: number | null = null;
+
+  const animation = (currentTime: number) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const ease = easeInOutCubic(progress);
+
+    window.scrollTo(0, startPosition + distance * ease);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
+}
+
+export function SmoothHashLink({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a href={href} className={className} onClick={(e) => scrollToHash(e, href)}>
+      {children}
+    </a>
+  );
+}
+
 const GRID_ITEMS = [
   { src: '/photos/pic 1.jpeg', area: '1 / 1 / 2 / 2' },
   { src: '/photos/pic 2.jpeg', area: '1 / 2 / 2 / 3' },
@@ -70,10 +125,18 @@ export default function Hero() {
             matters.
           </p>
           <div className="hero-cta">
-            <a href="#products" className="btn-primary">
+            <a
+              href="#products"
+              className="btn-primary"
+              onClick={(e) => scrollToHash(e, '#products')}
+            >
               Our Products
             </a>
-            <a href="#services" className="btn-secondary">
+            <a
+              href="#services"
+              className="btn-secondary"
+              onClick={(e) => scrollToHash(e, '#services')}
+            >
               Our Services
             </a>
           </div>

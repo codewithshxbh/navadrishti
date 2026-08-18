@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { HeroPhotoGrid } from '@/components/Hero';
+import { HeroPhotoGrid, SmoothHashLink } from '@/components/Hero';
 import { GramBrand } from '@/components/Platform';
 import ScrollToTop from '@/components/ScrollToTop';
 import {
@@ -157,12 +157,12 @@ export default function NavadrishtiPlatformPage() {
             <h1>{PRODUCT_HERO.headline}</h1>
             <p className="platform-page-lead">{PRODUCT_HERO.lead}</p>
             <div className="product-actions platform-page-hero-actions">
-              <a
+              <SmoothHashLink
                 className="product-action product-action--secondary"
                 href={PRODUCT_HERO.primaryCta.href}
               >
                 {PRODUCT_HERO.primaryCta.label}
-              </a>
+              </SmoothHashLink>
               <a
                 className="product-action product-action--primary"
                 href={PRODUCT_HERO.secondaryCta.href}

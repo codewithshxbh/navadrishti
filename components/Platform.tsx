@@ -147,7 +147,7 @@ export default function Platform() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Visit Platform
+                Visit GRAM
               </a>
               <Link
                 className="product-action product-action--secondary"
