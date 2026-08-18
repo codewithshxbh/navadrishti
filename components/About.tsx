@@ -90,8 +90,9 @@ export default function About() {
     const currentVideo = getLayer(currentLayer);
     const nextVideo = getLayer(nextLayer);
     const nextSrc = ABOUT_VIDEOS[nextIndex];
+    const followingSrc = ABOUT_VIDEOS[(nextIndex + 1) % ABOUT_VIDEOS.length];
 
-    if (!nextVideo) {
+    if (!nextVideo || !nextSrc || !followingSrc) {
       switchingRef.current = false;
       return;
     }
@@ -118,10 +119,7 @@ export default function About() {
 
     window.setTimeout(() => {
       currentVideo?.pause();
-      preload(
-        currentLayer,
-        ABOUT_VIDEOS[(nextIndex + 1) % ABOUT_VIDEOS.length]
-      );
+      preload(currentLayer, followingSrc);
       switchingRef.current = false;
     }, FADE_MS);
   }, [getLayer, preload]);
