@@ -874,11 +874,19 @@ h6 {
 }
 
 .about-video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  background: #111827;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.about-video.is-active {
+  opacity: 1;
 }
 
 .about-video-dots {
@@ -890,6 +898,7 @@ h6 {
   justify-content: center;
   gap: 0.4rem;
   pointer-events: none;
+  z-index: 2;
 }
 
 .about-video-dot {
