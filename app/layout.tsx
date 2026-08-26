@@ -12,8 +12,7 @@ import {
   APP_URL,
   GRAM_BRAND_LINE,
   GRAM_PAGE_URL,
-  PLATFORM_PHASE_ONE,
-  PLATFORM_PHASE_TWO,
+  PLATFORM_CAPABILITIES,
   SEO_HOME_DESCRIPTION,
   SEO_HOME_TITLE,
   SEO_OG_IMAGE_ALT,
@@ -282,7 +281,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 sameAs: [GRAM_PAGE_URL, APP_URL],
                 description:
                   'Multi-stakeholder social impact platform connecting NGOs, companies and volunteers with CSR collaboration, offline field evidence and verifiable operational records.',
-                featureList: [...PLATFORM_PHASE_ONE, ...PLATFORM_PHASE_TWO],
+                featureList: [...PLATFORM_CAPABILITIES],
                 provider: {
                   '@id': `${SITE_URL}/#organization`,
                 },

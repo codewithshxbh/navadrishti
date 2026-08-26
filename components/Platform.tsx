@@ -5,14 +5,13 @@ import Link from 'next/link';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import {
   PLATFORM_APP_URL,
+  PLATFORM_CAPABILITIES,
   PLATFORM_FEATURES,
   PLATFORM_FUTURE_DOMAINS,
   PLATFORM_LEAD,
   PLATFORM_LOGO,
   PLATFORM_NAME,
   PLATFORM_PAGE_PATH,
-  PLATFORM_PHASE_ONE,
-  PLATFORM_PHASE_TWO,
   PLATFORM_STAKEHOLDERS,
   PLATFORM_STATUS,
   PLATFORM_TECH_DIRECTION,
@@ -113,7 +112,7 @@ export default function Platform() {
             <p className="product-lead">{PLATFORM_LEAD}</p>
 
             <div className="product-block">
-              <h4>Special Features</h4>
+              <h4>Highlights</h4>
               <ul className="product-list product-list--usp">
                 {PLATFORM_FEATURES.map((item) => (
                   <li key={item}>{item}</li>
@@ -121,23 +120,13 @@ export default function Platform() {
               </ul>
             </div>
 
-            <div className="product-phases">
-              <div className="product-block">
-                <h4>Phase 1</h4>
-                <ul className="product-list">
-                  {PLATFORM_PHASE_ONE.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="product-block">
-                <h4>Phase 2</h4>
-                <ul className="product-list">
-                  {PLATFORM_PHASE_TWO.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+            <div className="product-block">
+              <h4>What's Live</h4>
+              <ul className="product-list">
+                {PLATFORM_CAPABILITIES.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
 
             <div className="product-actions">

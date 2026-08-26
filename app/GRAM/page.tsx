@@ -28,7 +28,7 @@ import {
   PRODUCT_HERO,
   PRODUCT_HOW_IT_WORKS,
   PRODUCT_OFFLINE,
-  PRODUCT_PHASES,
+  PRODUCT_CAPABILITIES,
   PRODUCT_PLATFORM,
   PRODUCT_PROBLEM,
   PRODUCT_STAKEHOLDERS,
@@ -347,28 +347,18 @@ export default function NavadrishtiPlatformPage() {
 
         <section
           className="platform-page-section platform-page-section--muted"
-          id="roadmap"
+          id="capabilities"
         >
           <div className="container">
-            <h2>{PRODUCT_PHASES.title}</h2>
-            <div className="platform-page-phases">
-              <article className="platform-page-card">
-                <h3>{PRODUCT_PHASES.phaseOne.title}</h3>
-                <ul className="platform-page-list">
-                  {PRODUCT_PHASES.phaseOne.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-              <article className="platform-page-card">
-                <h3>{PRODUCT_PHASES.phaseTwo.title}</h3>
-                <ul className="platform-page-list">
-                  {PRODUCT_PHASES.phaseTwo.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            </div>
+            <h2>{PRODUCT_CAPABILITIES.title}</h2>
+            <p className="platform-page-copy">{PRODUCT_CAPABILITIES.lead}</p>
+            <article className="platform-page-card">
+              <ul className="platform-page-list">
+                {PRODUCT_CAPABILITIES.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
           </div>
         </section>
 
