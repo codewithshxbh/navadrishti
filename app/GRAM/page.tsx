@@ -352,13 +352,19 @@ export default function NavadrishtiPlatformPage() {
           <div className="container">
             <h2>{PRODUCT_CAPABILITIES.title}</h2>
             <p className="platform-page-copy">{PRODUCT_CAPABILITIES.lead}</p>
-            <article className="platform-page-card">
-              <ul className="platform-page-list">
-                {PRODUCT_CAPABILITIES.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
+            <ul
+              className="live-capabilities"
+              aria-label="Live GRAM capabilities"
+            >
+              {PRODUCT_CAPABILITIES.items.map((item, index) => (
+                <li key={item} className="live-capability">
+                  <span className="live-capability-index" aria-hidden="true">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="live-capability-text">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
