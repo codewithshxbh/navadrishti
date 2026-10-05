@@ -121,8 +121,8 @@ export default function Hero() {
             className="hero-subtitle"
             style={{ color: 'rgba(255, 255, 255, 0.9)' }}
           >
-            Where technology, expertise and purpose come together to solve what
-            matters.
+            The technology and consulting company behind GRAM, our live social
+            impact platform for CSR teams, NGOs and volunteers in India.
           </p>
           <div className="hero-cta">
             <a

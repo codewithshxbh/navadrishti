@@ -10,9 +10,10 @@ export const SITE_EMAIL = 'connect@navadrishti.in';
 export const SITE_NAME = 'Navadrishti LLP';
 export const GRAM_BRAND_LINE = 'GRAM powered by Navadrishti LLP';
 
-export const SEO_HOME_TITLE = 'Navadrishti LLP | Consultation & Technology';
+export const SEO_HOME_TITLE =
+  'Navadrishti LLP | GRAM Social Impact Platform & Technology Company';
 export const SEO_HOME_DESCRIPTION =
-  'Navadrishti LLP builds GRAM and consultation services for social impact in India. CSR platforms, CA-verified NGOs, offline field evidence, volunteering and measurable outcomes.';
+  'Navadrishti LLP is the technology company behind GRAM, a social impact platform for CSR, NGO verification, volunteering and field evidence in India. Explore the company portfolio and live product.';
 
 export const SEO_GRAM_TITLE =
   'GRAM | CSR & NGO Platform by Navadrishti LLP | CA-Verified NGOs India';
@@ -21,7 +22,8 @@ export const SEO_GRAM_DESCRIPTION =
 
 /** SEO/social preview only — not linked or shown anywhere on the public site UI. */
 export const SEO_OG_IMAGE_PATH = '/seo/og-preview.jpg';
-export const SEO_OG_IMAGE_ALT = 'Navadrishti LLP: Consultation & Technology';
+export const SEO_OG_IMAGE_ALT =
+  'Navadrishti LLP: GRAM social impact platform and technology company';
 export const SEO_OG_IMAGE_WIDTH = 1200;
 export const SEO_OG_IMAGE_HEIGHT = 630;
 
