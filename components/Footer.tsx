@@ -1,11 +1,6 @@
 'use client';
 
-import { GramBrand, NavadrishtiBrand } from '@/components/Platform';
-import {
-  PLATFORM_APP_URL,
-  PLATFORM_LOGO,
-  PLATFORM_PAGE_PATH,
-} from '@/constants';
+import { PLATFORM_APP_URL, PLATFORM_LOGO } from '@/constants';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -28,20 +23,6 @@ export default function Footer() {
             <div className="footer-col">
               <h3>Links</h3>
               <ul>
-                <li>
-                  <Link href="/" className="footer-brand-link">
-                    <NavadrishtiBrand />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="footer-brand-link"
-                    href={PLATFORM_PAGE_PATH}
-                    aria-label="GRAM product page"
-                  >
-                    <GramBrand />
-                  </Link>
-                </li>
                 <li>
                   <a
                     className="footer-brand-link footer-open-app-link"
@@ -69,10 +50,10 @@ export default function Footer() {
               <h3>Legal</h3>
               <ul>
                 <li>
-                  <a href="#terms">Terms & Conditions</a>
+                  <Link href="/terms-and-conditions">Terms & Conditions</Link>
                 </li>
                 <li>
-                  <a href="#privacy">Privacy Policy</a>
+                  <Link href="/privacy-policy">Privacy Policy</Link>
                 </li>
               </ul>
             </div>

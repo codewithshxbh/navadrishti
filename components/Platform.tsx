@@ -13,7 +13,6 @@ import {
   PLATFORM_NAME,
   PLATFORM_PAGE_PATH,
   PLATFORM_STAKEHOLDERS,
-  PLATFORM_STATUS,
   PLATFORM_TECH_DIRECTION,
 } from '@/constants';
 
@@ -100,7 +99,6 @@ export default function Platform() {
               <h3>
                 <GramBrand />
               </h3>
-              <p className="product-status">{PLATFORM_STATUS}</p>
             </div>
 
             <ul className="product-stakeholders" aria-label="Stakeholders">

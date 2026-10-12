@@ -144,6 +144,10 @@ export default function NavadrishtiPlatformPage() {
           <Link href="/#products" className="platform-page-back">
             Back to Products
           </Link>
+          <nav className="platform-page-legal-links" aria-label="GRAM legal">
+            <Link href="/GRAM/terms-and-conditions">Website Terms of Use</Link>
+            <Link href="/GRAM/privacy-policy">Privacy Policy</Link>
+          </nav>
         </div>
       </header>
 

@@ -124,8 +124,6 @@ export const PLATFORM_NAME = 'GRAM';
 
 export const PLATFORM_LOGO = '/photos/Gram.svg';
 
-export const PLATFORM_STATUS = 'Currently Deployed';
-
 export const PLATFORM_STAKEHOLDERS = [
   'NGOs',
   'Companies',
