@@ -553,6 +553,12 @@ h6 {
   background: #2d2d2d;
 }
 
+@media (min-width: 769px) {
+  .hero {
+    min-height: 100vh;
+  }
+}
+
 .hero-photo-grid {
   position: absolute;
   top: 0;
