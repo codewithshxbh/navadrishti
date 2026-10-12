@@ -11,7 +11,7 @@ export const SITE_NAME = 'Navadrishti LLP';
 export const GRAM_BRAND_LINE = 'GRAM powered by Navadrishti LLP';
 
 export const SEO_HOME_TITLE =
-  'Navadrishti LLP | GRAM Social Impact Platform & Technology Company';
+  'Navadrishti LLP | Technology & Consultancy Services';
 export const SEO_HOME_DESCRIPTION =
   'Navadrishti LLP is the technology company behind GRAM, a social impact platform for CSR, NGO verification, volunteering and field evidence in India. Explore the company portfolio and live product.';
 
